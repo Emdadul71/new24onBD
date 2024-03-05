@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 const catData = [
   { title: "সর্বশেষ", slug: "/সর্বশেষ" },
   { title: "বিশেষ সংবাদ", slug: "/বিশেষ সংবাদ" },
@@ -65,7 +66,13 @@ const CategoryList = ({ cat, setCat, title }: any) => {
                         : ""
                     }`}
                   >
-                    {item.title}
+                    <Link
+                      href="/category/সর্বশেষ
+"
+                    >
+                      {" "}
+                      {item.title}
+                    </Link>
                   </li>
                 );
               })}

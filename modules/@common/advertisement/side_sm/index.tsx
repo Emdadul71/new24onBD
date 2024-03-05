@@ -4,7 +4,7 @@ import { getRandomIndex } from "../../../../helpers/utils";
 import { useEffect, useState } from "react";
 import Advertisement from "..";
 
-const AdvertisementSideSm = () => {
+const AdvertisementSideSm = ({ className }: any) => {
   const [randomIndex, setRandomIndex] = useState(1);
 
   // const randomIndex = getRandomIndex(addArray);
@@ -16,6 +16,7 @@ const AdvertisementSideSm = () => {
 
   return (
     <Advertisement
+      className={className}
       width={300}
       height={250}
       src={randomElement.src}

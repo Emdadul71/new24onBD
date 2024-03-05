@@ -1,10 +1,8 @@
 import NewsCard from "@/modules/@common/@layout/news-card";
-import Advertisement from "@/modules/@common/advertisement";
+import AdvertisementLeftSide from "@/modules/@common/advertisement/left_side";
 import AdvertisementPageTop from "@/modules/@common/advertisement/page_top";
 import AdvertisementSideSm from "@/modules/@common/advertisement/side_sm";
-import CategoryList from "@/modules/@common/categories";
 import { Footer } from "@/modules/@common/footer";
-import { Divider } from "antd";
 import Image from "next/image";
 import React from "react";
 
@@ -16,24 +14,7 @@ const newsData = [
     desc: "রাজধানীর ধানমন্ডির সাতমসজিদ সড়কের গাউসিয়া টুইন পিক ভবনে একটি রুফটপ রেস্তোরাঁ ভেঙে ফেলা হয়েছে। এ ছাড়া ওই ভবনের ১২টি রেস্তোরাঁ সিলগালা করে দিয়েছে রাজধানী উন্নয়ন কর্তৃপক্ষ। নির্বাহী ম্যাজিস্ট্রেট বলছেন, ভবনটিতে অফিস করার অনুমতি থাকলেও রেস্তোরাঁ করার অনুমতি ছিল না। গত ২৩ মে রাজউক এই ভবন পরিদর্শনে এসে নোটিশ দিয়েছিল। আজ সোমবার রাজউকের অঞ্চল–৩–এর পরিচালক ও নির্বাহী ম্যাজিস্ট্রেট তাজিনা সারোয়ার এই অভিযান পরিচালনা করেন। বেলা ১১টার পর অভিযান শুরু হয়। তবে এর আগেই ভবনের রেস্তোরাঁগুলো বন্ধ ছিল।",
     date: "৫ জুলাই, ২০২২",
   },
-  {
-    imgSrc: "/temp/news-card-3.webp",
-    title: "রাসুল (সা.)–এর মমতা এক সাহাবির প্রতি",
-    desc: "ইসহাক ইবনু আমর ইবনু সালীত (রহ.) আবু বারযাহ (রা.)–এর বরাতে বর্ণনা করা হয়েছে যে, নবী (সা.) এক জিহাদে ছিলেন। আল্লাহ তাঁকে গনিমতের সম্পদ দিলেন। তিনি তাঁর সাহাবাদের বললেন, তোমরা কি কাউকে হারিয়েছ?",
-    date: "৫ জুলাই, ২০২২",
-  },
-  {
-    imgSrc: "/temp/news-card-4.webp",
-    title: "চট্টগ্রামে হোটেল থেকে বিদেশি নাগরিকের লাশ উদ্ধার",
-    desc: "চট্টগ্রাম নগরের জিইসি এলাকার অভিজাত একটি হোটেল থেকে আজ সোমবার দুপুরে এক বিদেশি নাগরিকের লাশ উদ্ধার করা হয়েছে। তাঁর নাম জদজিসলো মিসেল সিজারিবা (৫৮)। তিনি পোল্যান্ডের নাগরিক।",
-    date: "৫ জুলাই, ২০২২",
-  },
-  {
-    imgSrc: "/temp/news-card-5.webp",
-    title: "রাজধানীর মগবাজারে ১০ কেজি গাঁজাসহ নারী গ্রেপ্তার",
-    desc: "রাজধানীর মগবাজার এলাকায় গতকাল শনিবার অভিযান চালিয়ে গাঁজাসহ এক নারীকে গ্রেপ্তার করেছে ঢাকা মহানগর পুলিশের (ডিএমপি) গোয়েন্দা বিভাগ (ডিবি)। গ্রেপ্তার হওয়া নারীর নাম শারমিন আক্তার সুমি ওরফে সুখী। পুলিশ বলেছে, শারমিন একজন মাদক কারবারি। তাঁর কাছ থেকে ১০ কেজি গাঁজা ও মাদক বিক্রিতে ব্যবহৃত একটি মুঠোফোন জব্দ করা হয়েছে।",
-    date: "৫ জুলাই, ২০২২",
-  },
+
   {
     imgSrc: "/temp/firm-incedents.webp",
 
@@ -84,19 +65,17 @@ const newsData = [
     desc: " মার্কিন সংবাদপত্র লস অ্যাঞ্জেলেস টাইমসের একটি প্রতিবেদনে বলা হয়, দৃষ্টিপ্রতিবন্ধী এক শিক্ষার্থী তোশিবার টি১০০০ টকিং ল্যাপটপের সুবিধা নিয়ে বিশ্ববিদ্যালয়ে তাঁর পড়াশোনা শেষ করেছেন এবং ডিগ্রি অর্জন করতে সক্ষম হয়েছেন। ইউনিভার্সিটি অব ক্যালিফোর্নিয়া লস অ্যাঞ্জেলেসে (ইউসিএলএ) কোর্স সম্পন্ন করতে এই ল্যাপটপ তাঁকে সহযোগিতা করে। ",
   },
 ];
-const HomeHero = () => {
+const TagListing = () => {
   return (
     <>
-      <section className="pt-4">
+      <section className="pt-4 pb-5">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_297px] gap-[30px]">
             <div>
               <AdvertisementPageTop className="mt-5" />
-              <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
-                {newsData?.map((item: any, i: any) => {
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                {newsData?.slice(4)?.map((item: any, i: any) => {
                   const isFirst = i == 0;
-                  const isFifth = i == 4;
-                  const isTwoToFive = i == 1 || i == 2 || i == 3 || i == 4;
                   return (
                     <>
                       <NewsCard
@@ -104,49 +83,29 @@ const HomeHero = () => {
                         data={item}
                         classes={{
                           root: isFirst
-                            ? "lg:grid-cols-2 col-span-4"
-                            : isTwoToFive
-                            ? "lg:grid-cols-1 col-span-4 lg:col-span-1"
-                            : `lg:grid-cols-[306px_1fr] col-span-4 gap-[20px] `,
-                          title: isFirst
-                            ? "!heading-three lg:!text-white !hover:text-primary"
-                            : isTwoToFive
-                            ? "!heading-six"
-                            : "!heading-five",
+                            ? "lg:col-span-2 !relative"
+                            : "self-start",
                           ImageWrapper: isFirst
-                            ? "lg:!h-[334px] !rounded-l-none"
-                            : isTwoToFive
-                            ? "!h-[124px] mb-3"
-                            : "",
-                          ImageStyle: isFirst ? "!rounded-l-none" : "",
+                            ? "h-[360px] lg:h-[372px]"
+                            : "h-[166px] mb-2",
+                          title: isFirst
+                            ? "text-base lg:text-[28px] lg:leading-9 text-white"
+                            : "heading-three",
+                          desc: isFirst ? "!hidden" : i > 1 ? "!hidden" : "",
+                          date: isFirst ? "!hidden" : "",
                           body: isFirst
-                            ? "lg:!-order-1 !justify-start lg:bg-[#1E184E] lg:p-[30px] gap-[14px] !rounded-l-md"
+                            ? "!absolute bottom-[20px] left-[26px] z-10 text-white"
                             : "",
-                          desc: isFirst
-                            ? "!line-clamp-4 lg:!text-white"
-                            : isTwoToFive
-                            ? "!hidden"
-                            : "",
-                          date: isFirst ? "!lg:text-white" : "",
-                          social: isFirst ? "!hidden" : "",
-                          cat: isTwoToFive ? "!hidden" : "",
+                          social: "!hidden",
+                          overlay: isFirst ? "!block" : "",
                         }}
                       />
-                      {isFifth && (
-                        <div className="col-span-4">
-                          <CategoryList title="টপ ক্যাটাগরি" />
-                        </div>
-                      )}
-                      {i > 4 && (
-                        <div className="w-full h-[1px] bg-[#DBDADE] col-span-4"></div>
-                      )}
                     </>
                   );
                 })}
               </div>
             </div>
             <div>
-              <CategoryList title="ট্রেন্ডিং" />
               <AdvertisementSideSm />
 
               <div className="flex items-center gap-1 mb-3">
@@ -178,6 +137,41 @@ const HomeHero = () => {
                 })}
               </div>
               <AdvertisementSideSm className="mt-6" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container">
+          <AdvertisementPageTop className="mb-5" />
+          <div className="grid grid-cols-1 lg:grid-cols-[160px_1fr_250px] gap-4">
+            <div>
+              <AdvertisementLeftSide />
+            </div>
+            <div>
+              {newsData?.map((item: any, i: any) => {
+                return (
+                  <>
+                    <NewsCard
+                      key={i}
+                      data={item}
+                      classes={{
+                        root: "lg:grid-cols-[306px_1fr] col-span-4 gap-[20px]",
+                        ImageWrapper: "!h-[162px]",
+                        ImageStyle: "!h-full",
+                        title: "heading-five !mb-1 lg:leading-[30px]",
+                        body: "!gap-0",
+                        desc: "text-base !mb-[2px]",
+                      }}
+                    />
+                    <div className="w-full h-[1px] bg-[#DBDADE] my-[15px]"></div>
+                  </>
+                );
+              })}
+            </div>
+            <div>
+              <AdvertisementSideSm />
               <Footer />
             </div>
           </div>
@@ -187,4 +181,4 @@ const HomeHero = () => {
   );
 };
 
-export default HomeHero;
+export default TagListing;

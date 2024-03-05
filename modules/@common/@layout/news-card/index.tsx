@@ -75,13 +75,12 @@ const NewsCard = ({ classes, data }: propTypes) => {
           </div>
         </div>
 
-        <Link href="#">
-          <h1
-            className={`  line-clamp-2 ${classes?.title ? classes.title : ""}`}
-          >
-            {data?.title}
-          </h1>
-        </Link>
+        <h1
+          className={`  line-clamp-2  ${classes?.title ? classes.title : ""}`}
+        >
+          {" "}
+          <Link href="#">{data?.title}</Link>
+        </h1>
 
         <p className={`mb-0 line-clamp-2 ${classes?.desc ? classes.desc : ""}`}>
           <Link href="#" className="hover:text-inherit">
