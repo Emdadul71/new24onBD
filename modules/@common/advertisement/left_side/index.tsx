@@ -1,3 +1,4 @@
+"use client";
 import useWindowDimensions from "../../../../hooks/useWindowDimensions";
 import Advertisement from "..";
 import { getRandomIndex } from "../../../../helpers/utils";

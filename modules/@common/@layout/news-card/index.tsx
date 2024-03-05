@@ -41,6 +41,7 @@ const NewsCard = ({ classes, data }: propTypes) => {
           className={`rounded-md h-full w-full objecct-cover ${
             classes?.ImageStyle ? classes.ImageStyle : ""
           }`}
+          priority={true}
         />
       </Link>
       <div

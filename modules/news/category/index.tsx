@@ -1,4 +1,5 @@
 import NewsCard from "@/modules/@common/@layout/news-card";
+import AdvertisementLeftSide from "@/modules/@common/advertisement/left_side";
 import AdvertisementPageTop from "@/modules/@common/advertisement/page_top";
 import AdvertisementSideSm from "@/modules/@common/advertisement/side_sm";
 import { Footer } from "@/modules/@common/footer";
@@ -66,76 +67,117 @@ const newsData = [
 ];
 const CategoryListing = () => {
   return (
-    <section className="pt-4">
-      <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_297px] gap-[30px]">
-          <div>
-            <AdvertisementPageTop className="mt-5" />
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-              {newsData?.slice(4)?.map((item: any, i: any) => {
-                const isFirst = i == 0;
+    <>
+      <section className="pt-4 pb-5">
+        <div className="container">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_297px] gap-[30px]">
+            <div>
+              <AdvertisementPageTop className="mt-5" />
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                {newsData?.slice(4)?.map((item: any, i: any) => {
+                  const isFirst = i == 0;
+                  return (
+                    <>
+                      <NewsCard
+                        key={i}
+                        data={item}
+                        classes={{
+                          root: isFirst
+                            ? "lg:col-span-2 !relative"
+                            : "self-start",
+                          ImageWrapper: isFirst
+                            ? "h-[360px] lg:h-[372px]"
+                            : "h-[166px] mb-2",
+                          title: isFirst
+                            ? "text-base lg:text-[28px] lg:leading-9 text-white"
+                            : "heading-three",
+                          desc: isFirst ? "!hidden" : i > 1 ? "!hidden" : "",
+                          date: isFirst ? "!hidden" : "",
+                          body: isFirst
+                            ? "!absolute bottom-[20px] left-[26px] z-10 text-white"
+                            : "",
+                          social: "!hidden",
+                          overlay: isFirst ? "!block" : "",
+                        }}
+                      />
+                    </>
+                  );
+                })}
+              </div>
+            </div>
+            <div>
+              <AdvertisementSideSm />
+
+              <div className="flex items-center gap-1 mb-3">
+                <Image
+                  title="Popular"
+                  src="/images/icon-fire.png"
+                  alt="Popular"
+                  width={16}
+                  height={16}
+                />
+                <h4 className="font-bold">জনপ্রিয়</h4>
+              </div>
+              <div className="flex flex-col gap-5 lg:gap-3">
+                {newsData?.slice(5)?.map((item: any, i: any) => {
+                  return (
+                    <NewsCard
+                      key={i}
+                      data={item}
+                      classes={{
+                        root: "grid-cols-[105px_1fr] gap-[10px]",
+                        ImageWrapper: "!h-[62px]",
+                        title: "heading-custom-one",
+                        body: "gap-0",
+                        desc: "!hidden",
+                        cat: "!hidden",
+                      }}
+                    />
+                  );
+                })}
+              </div>
+              <AdvertisementSideSm />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container">
+          <AdvertisementPageTop className="mb-5" />
+          <div className="grid grid-cols-1 lg:grid-cols-[160px_1fr_250px] gap-4">
+            <div>
+              <AdvertisementLeftSide />
+            </div>
+            <div>
+              {newsData?.map((item: any, i: any) => {
                 return (
                   <>
                     <NewsCard
                       key={i}
                       data={item}
                       classes={{
-                        root: isFirst ? "col-span-2 !relative" : "self-start",
-                        ImageWrapper: isFirst ? "h-[372px]" : "h-[166px] mb-2",
-                        title: isFirst
-                          ? "lg:text-[28px] lg:leading-9 text-white"
-                          : "heading-three",
-                        desc: isFirst ? "!hidden" : i > 1 ? "!hidden" : "",
-                        date: isFirst ? "!hidden" : "",
-                        body: isFirst
-                          ? "!absolute bottom-[20px] left-[26px] z-10 text-white"
-                          : "",
-                        social: "!hidden",
-                        overlay: isFirst ? "!block" : "",
+                        root: "lg:grid-cols-[306px_1fr] col-span-4 gap-[20px]",
+                        ImageWrapper: "!h-[162px]",
+                        ImageStyle: "!h-full",
+                        title: "heading-five !mb-1 lg:leading-[30px]",
+                        desc: "text-base !mb-[2px]",
+                        body: "!gap-0",
                       }}
                     />
+                    <div className="w-full h-[1px] bg-[#DBDADE] my-[15px]"></div>
                   </>
                 );
               })}
             </div>
-          </div>
-          <div>
-            <AdvertisementSideSm />
-
-            <div className="flex items-center gap-1 mb-3">
-              <Image
-                title="Popular"
-                src="/images/icon-fire.png"
-                alt="Popular"
-                width={16}
-                height={16}
-              />
-              <h4 className="font-bold">জনপ্রিয়</h4>
+            <div>
+              <AdvertisementSideSm />
+              <Footer />
             </div>
-            <div className="flex flex-col gap-5 lg:gap-3">
-              {newsData?.slice(5)?.map((item: any, i: any) => {
-                return (
-                  <NewsCard
-                    key={i}
-                    data={item}
-                    classes={{
-                      root: "grid-cols-[105px_1fr] gap-[10px]",
-                      ImageWrapper: "!h-[62px]",
-                      title: "heading-custom-one",
-                      body: "gap-0",
-                      desc: "!hidden",
-                      cat: "!hidden",
-                    }}
-                  />
-                );
-              })}
-            </div>
-            <AdvertisementSideSm />
-            <Footer />
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
