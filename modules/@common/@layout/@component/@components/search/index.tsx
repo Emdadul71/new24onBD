@@ -48,7 +48,7 @@ export const Search = ({ pageType = "news" }: propTypes) => {
           </span>
 
           {lan == "bangla" ? (
-            <AvroInput
+            <input
               id="search"
               type="text"
               className="!mt-0 text-[15px] !px-4 py-[6px] w-full rounded-md dark:bg-neutral-800 bg-[#F4F4F4] focus:outline-0"

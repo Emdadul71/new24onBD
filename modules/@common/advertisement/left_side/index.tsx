@@ -1,8 +1,8 @@
-import useWindowDimensions from "@hooks/useWindowDimensions";
+import useWindowDimensions from "../../../../hooks/useWindowDimensions";
 import Advertisement from "..";
-import { getRandomIndex } from "@helpers/utils";
-import addArray from "@data/ad_array.json";
-import addArray2 from "@data/ad_array_leftside.json";
+import { getRandomIndex } from "../../../../helpers/utils";
+import addArray from "../../../../helpers/data/ad_array.json";
+import addArray2 from "../../../../helpers/data/ad_array_leftside.json";
 import { useEffect, useState } from "react";
 
 const AdvertisementLeftSide = () => {
