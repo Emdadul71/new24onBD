@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-body;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-black font-bold text-[#353535] hover:text-secondary transition-all;
+  }
+  a {
+    @apply hover:text-secondary transition-all;
+  }
+  p {
+    @apply mb-4 text-lg lg:leading-[28px];
+  }
+
+  section {
+    @apply pb-8 md:pb-10 lg:pb-[80px];
+  }
+  // headings reset
+  h1 {
+    @apply lg:text-[32px] md:text-[32px] text-[27px] lg:leading-[40px] md:leading-[40px] leading-[34px];
+  }
+  h2 {
+    @apply lg:text-[28px] md:text-[28px] text-[24px] lg:leading-[40px] md:leading-[40px] leading-[36px];
+  }
+  h3 {
+    @apply lg:text-[26px] md:text-[26px] text-[22px] lg:leading-[34px] md:leading-[34px] leading-[28px];
+  }
+  h4 {
+    @apply lg:text-[24px] md:text-[24px] text-[20px] lg:leading-[32px] md:leading-[32px] leading-[26px];
+  }
+  h5 {
+    @apply lg:text-[20px] md:text-[20px] text-[18px] lg:leading-[28px] md:leading-[28px] leading-[24px];
+  }
+  h6 {
+    @apply lg:text-[18px] md:text-[18px] text-[16px] lg:leading-[14px] md:leading-[24px] leading-[24px];
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-[1310px] px-5 mx-auto w-full;
+  }
+  .heading-one {
+    @apply lg:text-[32px] md:text-[32px] text-[27px] lg:leading-[40px] md:leading-[40px] leading-[34px] font-semibold;
+  }
+  .heading-two {
+    @apply lg:text-[28px] md:text-[28px] text-[24px] lg:leading-[40px] md:leading-[40px] leading-[36px] font-semibold;
+  }
+  .heading-three {
+    @apply lg:text-[26px] md:text-[26px] text-[22px] lg:leading-[34px] md:leading-[34px] leading-[28px] font-semibold;
+  }
+  .heading-four {
+    @apply lg:text-[24px] md:text-[24px] text-[20px] lg:leading-[32px] md:leading-[32px] leading-[26px] font-semibold;
+  }
+  .heading-five {
+    @apply lg:text-[20px] md:text-[20px] text-[18px] lg:leading-[28px] md:leading-[28px] leading-[24px] font-semibold;
+  }
+  .heading-six {
+    @apply lg:text-[18px] md:text-[18px] text-[16px] lg:leading-[24px] md:leading-[24px] leading-[24px] font-semibold;
+  }
+  .heading-custom-one {
+    @apply lg:text-[16px] md:text-[16px] text-[16px] lg:leading-[22px] md:leading-[22px] leading-[22px]  font-semibold;
+  }
+
+  // buttons
+  .btn {
+    @apply cursor-pointer inline-flex gap-1.5 font-medium text-sm items-center justify-center  py-2 px-4 rounded-[4px] whitespace-nowrap;
+  }
+  .btn-primary {
+    @apply border border-primary bg-primary text-white hover:bg-secondary hover:border-secondary hover:text-white transition-all;
+  }
+  .btn-secondary {
+    @apply border border-secondary bg-secondary text-white hover:bg-primary hover:border-primary hover:text-white transition-all;
+  }
+  .btn-white {
+    @apply border border-white bg-white  text-primary transition-all;
+  }
+  .btn-grey {
+    @apply border border-[#ebebed] bg-[#ebebed]  text-grey hover:border-[#d3d3d3] hover:bg-[#d3d3d3] transition-all;
+  }
+  .btn-white-outline {
+    @apply text-white border border-white transition-all;
+  }
+}
