@@ -7,7 +7,6 @@ import AdvertisementSideSm from "@/modules/@common/advertisement/side_sm";
 import CategoryList from "@/modules/@common/categories";
 import { Footer } from "@/modules/@common/footer";
 import Skeleton from "@/modules/@common/skeleton";
-import { Divider } from "antd";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 

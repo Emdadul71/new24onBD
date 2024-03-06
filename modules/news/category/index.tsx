@@ -5,7 +5,7 @@ import AdvertisementLeftSide from "@/modules/@common/advertisement/left_side";
 import AdvertisementPageTop from "@/modules/@common/advertisement/page_top";
 import AdvertisementSideSm from "@/modules/@common/advertisement/side_sm";
 import { Footer } from "@/modules/@common/footer";
-import { Skeleton } from "antd";
+import Skeleton from "@/modules/@common/skeleton";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
