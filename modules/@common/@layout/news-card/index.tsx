@@ -39,10 +39,10 @@ const NewsCard = ({ classes, data }: propTypes) => {
           width={306}
           height={182}
           alt="Test"
+          priority={true}
           className={`rounded-md h-full w-full objecct-cover ${
             classes?.ImageStyle ? classes.ImageStyle : ""
           }`}
-          priority={true}
         />
       </Link>
       <div
@@ -79,7 +79,6 @@ const NewsCard = ({ classes, data }: propTypes) => {
         <h1
           className={`  line-clamp-2  ${classes?.title ? classes.title : ""}`}
         >
-          {" "}
           <Link href="#">{normalizedText(data?.title)}</Link>
         </h1>
 

@@ -1,3 +1,4 @@
+import { normalizedText } from "@/helpers/utils";
 import NewsCard from "@/modules/@common/@layout/news-card";
 import AdvertisementLeftSide from "@/modules/@common/advertisement/left_side";
 import AdvertisementPageTop from "@/modules/@common/advertisement/page_top";
@@ -114,7 +115,7 @@ const TagListing = () => {
                   width={16}
                   height={16}
                 />
-                <h4 className="font-bold">জনপ্রিয়</h4>
+                <h4 className="font-bold">{normalizedText("জনপ্রিয়")}</h4>
               </div>
               <div className="flex flex-col gap-5 lg:gap-3">
                 {newsData?.slice(5)?.map((item: any, i: any) => {
