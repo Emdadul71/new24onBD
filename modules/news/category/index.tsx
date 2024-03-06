@@ -72,7 +72,7 @@ const CategoryListing = () => {
   const [mount, setMount] = useState(false);
   useEffect(() => {
     setMount(true);
-  }, [1000]);
+  }, [500]);
 
   return (
     <>
@@ -98,9 +98,9 @@ const CategoryListing = () => {
                             root: isFirst
                               ? "lg:col-span-2 !relative"
                               : "self-start",
-                            ImageWrapper: isFirst
-                              ? "h-[360px] lg:h-[372px]"
-                              : "h-[166px] mb-2",
+                            // ImageWrapper: isFirst
+                            //   ? "h-[360px] lg:h-[372px]"
+                            //   : "h-[166px] mb-2",
                             title: isFirst
                               ? "text-base lg:text-[28px] lg:leading-9 text-white"
                               : "heading-three",
