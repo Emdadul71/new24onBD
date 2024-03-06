@@ -128,7 +128,7 @@ const CategoryListing = () => {
                         root: "grid-cols-[105px_1fr] gap-[10px]",
                         ImageWrapper: "!h-[62px]",
                         title: "heading-custom-one",
-                        body: "gap-0",
+                        body: "!gap-0",
                         desc: "!hidden",
                         cat: "!hidden",
                       }}
@@ -136,7 +136,7 @@ const CategoryListing = () => {
                   );
                 })}
               </div>
-              <AdvertisementSideSm />
+              <AdvertisementSideSm className="mt-6" />
             </div>
           </div>
         </div>

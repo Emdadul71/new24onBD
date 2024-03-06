@@ -26,30 +26,30 @@ const SocialShare = ({ className, sharedUrl }: propsTypes) => {
     >
       <li>
         <FacebookShareButton url={sharedUrl}>
-          <div className="block px-1 text-[#726F84] hover:text-secondary">
+          <span className="block px-1 text-[#726F84] hover:text-secondary">
             <BiLogoFacebook className="text-xl" />
-          </div>
+          </span>
         </FacebookShareButton>
       </li>
       <li>
         <TwitterShareButton url={sharedUrl}>
-          <div className="block px-1 text-[#726F84] hover:text-secondary">
+          <span className="block px-1 text-[#726F84] hover:text-secondary">
             <AiOutlineTwitter className="text-xl" />
-          </div>
+          </span>
         </TwitterShareButton>
       </li>
       <li>
         <LinkedinShareButton url={sharedUrl}>
-          <div className="block px-1 text-[#726F84] hover:text-secondary">
+          <span className="block px-1 text-[#726F84] hover:text-secondary">
             <FaLinkedinIn className="text-lg" />
-          </div>
+          </span>
         </LinkedinShareButton>
       </li>
       <li>
         <WhatsappShareButton url={sharedUrl}>
-          <div className="block px-1 text-[#726F84] hover:text-secondary">
+          <span className="block px-1 text-[#726F84] hover:text-secondary">
             <PiInstagramLogoBold className="text-lg" />
-          </div>
+          </span>
         </WhatsappShareButton>
       </li>
     </ul>
