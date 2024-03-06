@@ -40,6 +40,7 @@ const NewsCard = ({ classes, data }: propTypes) => {
           height={182}
           alt="Test"
           priority={true}
+          rel="preload"
           className={`rounded-md h-full w-full objecct-cover ${
             classes?.ImageStyle ? classes.ImageStyle : ""
           }`}
