@@ -22,6 +22,12 @@ export const htmlParse = (str: string) => {
   return parse(str);
 };
 
+export const normalizedText = (str: string) => {
+  if (!str || str == "" || typeof str !== "string") return false;
+  const normalizedText = `${str}`.normalize("NFC");
+  return normalizedText;
+};
+
 //remove tags
 export const remove_tags = (_html: any) => {
   let html = _html?.toString();

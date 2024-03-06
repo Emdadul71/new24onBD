@@ -1,4 +1,5 @@
 "use client";
+import { normalizedText } from "@/helpers/utils";
 import Image from "next/image";
 import Link from "next/link";
 const catData = [
@@ -43,7 +44,7 @@ const CategoryList = ({ cat, setCat, title }: any) => {
               width={16}
               height={16}
             />
-            <h4 className="font-bold">{title}</h4>
+            <h4 className="font-bold">{normalizedText(title)}</h4>
           </div>
           <div className="mb-8 category_list">
             <ul className="flex flex-wrap items-center gap-2">
@@ -66,12 +67,8 @@ const CategoryList = ({ cat, setCat, title }: any) => {
                         : ""
                     }`}
                   >
-                    <Link
-                      href="/category/সর্বশেষ
-"
-                    >
-                      {" "}
-                      {item.title}
+                    <Link href={`${`/category/${normalizedText("সর্বশেষ")}`}`}>
+                      {normalizedText(item.title)}
                     </Link>
                   </li>
                 );

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import SocialShare from "../../social_share";
+import { normalizedText } from "@/helpers/utils";
 interface propTypes {
   classes?: {
     root?: string;
@@ -15,10 +16,9 @@ interface propTypes {
     date?: string;
     overlay?: string;
   };
-  normalizedText?: string;
   data?: any;
 }
-const NewsCard = ({ classes, data, normalizedText }: propTypes) => {
+const NewsCard = ({ classes, data }: propTypes) => {
   return (
     <div
       className={`grid  group relative ${classes?.root ? classes.root : ""}`}
@@ -60,14 +60,14 @@ const NewsCard = ({ classes, data, normalizedText }: propTypes) => {
               href=""
               className="text-xs font-medium text-secondary hover:text-secondary transition-all"
             >
-              বাংলাদেশ
+              {normalizedText("বাংলাদেশ")}
             </Link>
             <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
             <Link
               href=""
               className="text-xs font-medium hover:text-secondary transition-all"
             >
-              বাংলাদেশ
+              {normalizedText("বাংলাদেশ")}
             </Link>
           </div>
 
@@ -80,13 +80,12 @@ const NewsCard = ({ classes, data, normalizedText }: propTypes) => {
           className={`  line-clamp-2  ${classes?.title ? classes.title : ""}`}
         >
           {" "}
-          <Link href="#">{data?.title}</Link>
+          <Link href="#">{normalizedText(data?.title)}</Link>
         </h1>
 
         <p className={`mb-0 line-clamp-2 ${classes?.desc ? classes.desc : ""}`}>
           <Link href="#" className="hover:text-inherit">
-            {/* {data?.desc} */}
-            {normalizedText}
+            {normalizedText(data?.desc)}
           </Link>
         </p>
 
@@ -95,7 +94,7 @@ const NewsCard = ({ classes, data, normalizedText }: propTypes) => {
             classes?.date ? classes?.date : ""
           }`}
         >
-          <span>৫ জুলাই, ২০২২</span>
+          <span>{normalizedText("৫ জুলাই, ২০২২")}</span>
         </div>
       </div>
     </div>

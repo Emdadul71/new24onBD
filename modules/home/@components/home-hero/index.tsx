@@ -94,7 +94,6 @@ const HomeHero = () => {
               <AdvertisementPageTop className="mt-5" />
               <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
                 {newsData?.map((item: any, i: any) => {
-                  const normalizedText = `${item?.desc}`.normalize("NFC");
                   const isFirst = i == 0;
                   const isFifth = i == 4;
                   const isTwoToFive = i == 1 || i == 2 || i == 3 || i == 4;
@@ -103,7 +102,6 @@ const HomeHero = () => {
                       <NewsCard
                         key={i}
                         data={item}
-                        normalizedText={normalizedText}
                         classes={{
                           root: isFirst
                             ? "lg:grid-cols-2 col-span-4"
