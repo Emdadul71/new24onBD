@@ -15,9 +15,10 @@ interface propTypes {
     date?: string;
     overlay?: string;
   };
+  normalizedText?: string;
   data?: any;
 }
-const NewsCard = ({ classes, data }: propTypes) => {
+const NewsCard = ({ classes, data, normalizedText }: propTypes) => {
   return (
     <div
       className={`grid  group relative ${classes?.root ? classes.root : ""}`}
@@ -84,7 +85,8 @@ const NewsCard = ({ classes, data }: propTypes) => {
 
         <p className={`mb-0 line-clamp-2 ${classes?.desc ? classes.desc : ""}`}>
           <Link href="#" className="hover:text-inherit">
-            {data?.desc}
+            {/* {data?.desc} */}
+            {normalizedText}
           </Link>
         </p>
 
