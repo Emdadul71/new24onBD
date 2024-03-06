@@ -83,7 +83,7 @@ const CategoryListing = () => {
               {mount ? (
                 <AdvertisementPageTop className="mt-5" />
               ) : (
-                <Skeleton className="h-[90px] w-[730px] mx-auto  mt-5 mb-8" />
+                <Skeleton className="!h-[40px] !lg:h-[90px] max-ww-[730px] w-full mx-auto  mt-5 mb-8" />
               )}
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                 {newsData?.slice(4)?.map((item: any, i: any) => {
@@ -115,7 +115,15 @@ const CategoryListing = () => {
                         />
                       ) : (
                         <>
-                          <Skeleton className="h-[90px] w-[730px] mx-auto  mt-5 mb-8" />
+                          <div>
+                            <Skeleton className="h-[360px]  mx-auto mb-4" />
+                            <div>
+                              <Skeleton className="h-[182px]  mx-auto" />
+                              <Skeleton className="h-[16px]  mx-auto mt-3" />
+                              <Skeleton className="h-[64px]  mx-auto mt-3" />
+                              <Skeleton className="h-[20px]  mx-auto mt-3" />
+                            </div>
+                          </div>
                         </>
                       )}
                     </>
