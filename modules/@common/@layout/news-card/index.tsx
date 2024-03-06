@@ -60,14 +60,16 @@ const NewsCard = ({ classes, data }: propTypes) => {
               href=""
               className="text-xs font-medium text-secondary hover:text-secondary transition-all"
             >
-              {normalizedText("বাংলাদেশ")}
+              {/* {normalizedText("বাংলাদেশ")} */}
+              বাংলাদেশ
             </Link>
             <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
             <Link
               href=""
               className="text-xs font-medium hover:text-secondary transition-all"
             >
-              {normalizedText("বাংলাদেশ")}
+              {/* {normalizedText("বাংলাদেশ")} */}
+              বাংলাদেশ
             </Link>
           </div>
 
@@ -79,12 +81,16 @@ const NewsCard = ({ classes, data }: propTypes) => {
         <h1
           className={`  line-clamp-2  ${classes?.title ? classes.title : ""}`}
         >
-          <Link href="#">{normalizedText(data?.title)}</Link>
+          <Link href="#">
+            {data?.title}
+            {/* {normalizedText(data?.title)} */}
+          </Link>
         </h1>
 
         <p className={`mb-0 line-clamp-2 ${classes?.desc ? classes.desc : ""}`}>
           <Link href="#" className="hover:text-inherit">
-            {normalizedText(data?.desc)}
+            {data?.desc}
+            {/* {normalizedText(data?.desc)} */}
           </Link>
         </p>
 
@@ -93,7 +99,7 @@ const NewsCard = ({ classes, data }: propTypes) => {
             classes?.date ? classes?.date : ""
           }`}
         >
-          <span>{normalizedText("৫ জুলাই, ২০২২")}</span>
+          <span>{/* {normalizedText("৫ জুলাই, ২০২২")}  */}৫ জুলাই, ২০২২</span>
         </div>
       </div>
     </div>
