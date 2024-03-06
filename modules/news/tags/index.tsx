@@ -1,11 +1,13 @@
+"use client";
 import { normalizedText } from "@/helpers/utils";
 import NewsCard from "@/modules/@common/@layout/news-card";
 import AdvertisementLeftSide from "@/modules/@common/advertisement/left_side";
 import AdvertisementPageTop from "@/modules/@common/advertisement/page_top";
 import AdvertisementSideSm from "@/modules/@common/advertisement/side_sm";
 import { Footer } from "@/modules/@common/footer";
+import { Skeleton } from "antd";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const newsData = [
   {
@@ -65,13 +67,23 @@ const newsData = [
   },
 ];
 const TagListing = () => {
+  const [mount, setMount] = useState(false);
+
+  useEffect(() => {
+    setMount(true);
+  }, [1000]);
+
   return (
     <>
       <section className="pt-4 pb-5">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_297px] gap-[30px]">
             <div>
-              <AdvertisementPageTop className="mt-5" />
+              {mount ? (
+                <AdvertisementPageTop className="mt-5" />
+              ) : (
+                <Skeleton className="h-[90px] w-[730px] mx-auto  mt-5 mb-8" />
+              )}
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                 {newsData?.slice(4)?.map((item: any, i: any) => {
                   const isFirst = i == 0;
