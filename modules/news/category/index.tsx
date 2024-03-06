@@ -90,42 +90,28 @@ const CategoryListing = () => {
                   const isFirst = i == 0;
                   return (
                     <>
-                      {mount ? (
-                        <NewsCard
-                          key={i}
-                          data={item}
-                          classes={{
-                            root: isFirst
-                              ? "lg:col-span-2 !relative"
-                              : "self-start",
-                            ImageWrapper: isFirst
-                              ? "h-[360px] lg:h-[372px]"
-                              : "h-[166px] mb-2",
-                            title: isFirst
-                              ? "text-base lg:text-[28px] lg:leading-9 text-white"
-                              : "heading-three",
-                            desc: isFirst ? "!hidden" : i > 1 ? "!hidden" : "",
-                            date: isFirst ? "!hidden" : "",
-                            body: isFirst
-                              ? "!absolute bottom-[20px] left-[26px] z-10 text-white"
-                              : "",
-                            social: "!hidden",
-                            overlay: isFirst ? "!block" : "",
-                          }}
-                        />
-                      ) : (
-                        <>
-                          <div>
-                            <Skeleton className="h-[360px]  mx-auto mb-4" />
-                            <div>
-                              <Skeleton className="h-[182px]  mx-auto" />
-                              <Skeleton className="h-[16px]  mx-auto mt-3" />
-                              <Skeleton className="h-[64px]  mx-auto mt-3" />
-                              <Skeleton className="h-[20px]  mx-auto mt-3" />
-                            </div>
-                          </div>
-                        </>
-                      )}
+                      <NewsCard
+                        key={i}
+                        data={item}
+                        classes={{
+                          root: isFirst
+                            ? "lg:col-span-2 !relative"
+                            : "self-start",
+                          ImageWrapper: isFirst
+                            ? "h-[360px] lg:h-[372px]"
+                            : "h-[166px] mb-2",
+                          title: isFirst
+                            ? "text-base lg:text-[28px] lg:leading-9 text-white"
+                            : "heading-three",
+                          desc: isFirst ? "!hidden" : i > 1 ? "!hidden" : "",
+                          date: isFirst ? "!hidden" : "",
+                          body: isFirst
+                            ? "!absolute bottom-[20px] left-[26px] z-10 text-white"
+                            : "",
+                          social: "!hidden",
+                          overlay: isFirst ? "!block" : "",
+                        }}
+                      />
                     </>
                   );
                 })}
