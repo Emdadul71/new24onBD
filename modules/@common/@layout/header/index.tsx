@@ -42,7 +42,7 @@ const Header = () => {
     <>
       <header className="sticky top-0 bg-white dark:bg-neutral-800 z-[100]  shadow-sm dark:shadow">
         <div className="container">
-          <div className="grid grid-cols-[auto_1fr_auto_auto] gap-5 md:gap-[50px] items-center py-4 lg:py-0">
+          <div className="grid lg:grid-cols-[auto_1fr_auto] gap-5 md:gap-[50px] items-center py-4 lg:py-0">
             <div className="flex justify-center">
               <Link href="/" className="block w-max">
                 <Image
@@ -189,8 +189,10 @@ const Header = () => {
               </nav>
             )}
 
-            <Search />
-            <button></button>
+            <div className="flex  gap-5 w-full">
+              <Search />
+              <button className="btn btn-secondary">লগ ইন</button>
+            </div>
           </div>
         </div>
       </header>

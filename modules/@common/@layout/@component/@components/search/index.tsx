@@ -71,7 +71,7 @@ export const Search = ({ pageType = "news" }: propTypes) => {
           type="submit"
           disabled={!text}
           className={`btn btn-secondary px-[30px] ml-[-4px] z-10 rounded-s-none ${
-            !text ? "pointer-events-none bg-gray-400" : ""
+            !text ? "pointer-events-none bg-primary" : ""
           }`}
         >
           <FiSearch />
