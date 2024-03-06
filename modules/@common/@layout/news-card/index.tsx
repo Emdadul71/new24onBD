@@ -35,7 +35,10 @@ const NewsCard = ({ classes, data }: propTypes) => {
         }`}
       >
         <Image
-          src={`${data?.imgSrc}` || "/misc/image_placeholder_big.webp"}
+          src={
+            `${data?.imgSrc && data?.imgSrc != undefined && data?.imgSrc}` ||
+            "/misc/image_placeholder_big.webp"
+          }
           width={306}
           height={182}
           alt="Test"
