@@ -1,4 +1,3 @@
-"use client";
 import { normalizedText } from "@/helpers/utils";
 import NewsCard from "@/modules/@common/@layout/news-card";
 import Advertisement from "@/modules/@common/advertisement";
@@ -87,23 +86,13 @@ const newsData = [
   },
 ];
 const HomeHero = () => {
-  const [mount, setMount] = useState(false);
-
-  useEffect(() => {
-    setMount(true);
-  }, [1000]);
   return (
     <>
       <section className="pt-4">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_297px] gap-[30px]">
             <div>
-              {mount ? (
-                <AdvertisementPageTop className="mt-5" />
-              ) : (
-                <Skeleton className="h-[90px] w-[730px] mx-auto  mt-5 mb-8" />
-              )}
-
+              <AdvertisementPageTop className="mt-5" />
               <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
                 {newsData?.map((item: any, i: any) => {
                   const isFirst = i == 0;

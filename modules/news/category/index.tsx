@@ -1,4 +1,3 @@
-"use client";
 import { normalizedText } from "@/helpers/utils";
 import NewsCard from "@/modules/@common/@layout/news-card";
 import AdvertisementLeftSide from "@/modules/@common/advertisement/left_side";
@@ -69,22 +68,14 @@ const newsData = [
   },
 ];
 const CategoryListing = () => {
-  const [mount, setMount] = useState(false);
-  useEffect(() => {
-    setMount(true);
-  }, [500]);
-
   return (
     <>
       <section className="pt-4 pb-5">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_297px] gap-[30px]">
             <div>
-              {mount ? (
-                <AdvertisementPageTop className="mt-5" />
-              ) : (
-                <Skeleton className="!h-[40px] !lg:h-[90px] max-ww-[730px] w-full mx-auto  mt-5 mb-8" />
-              )}
+              <AdvertisementPageTop className="mt-5" />
+
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                 {newsData?.slice(4)?.map((item: any, i: any) => {
                   const isFirst = i == 0;
