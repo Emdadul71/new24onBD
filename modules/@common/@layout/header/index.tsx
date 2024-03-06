@@ -1,6 +1,5 @@
 "use client";
 import navData from "@/helpers/data/nav.json";
-import { Drawer, DrawerProps, RadioChangeEvent, Tooltip } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import { Fragment, useEffect, useState } from "react";
@@ -14,7 +13,7 @@ import { FaRegUserCircle } from "react-icons/fa";
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [userToken, setUserToken] = useState<any>();
-  const [placement, setPlacement] = useState<DrawerProps["placement"]>("left");
+  // const [placement, setPlacement] = useState<DrawerProps["placement"]>("left");
 
   const path = usePathname();
 
@@ -26,9 +25,9 @@ const Header = () => {
     setOpen(false);
   };
 
-  const onChange = (e: RadioChangeEvent) => {
-    setPlacement(e.target.value);
-  };
+  // const onChange = (e: RadioChangeEvent) => {
+  //   setPlacement(e.target.value);
+  // };
 
   const [selected, setSelected] = useState(null);
 
@@ -195,7 +194,7 @@ const Header = () => {
         </div>
       </header>
 
-      <Drawer
+      {/* <Drawer
         title="Immi Link"
         placement={placement}
         onClose={onClose}
@@ -203,7 +202,6 @@ const Header = () => {
         key={placement}
       >
         <div className="h-[100vh] overflow-auto">
-          {/* body */}
           <div
             className="flex flex-col overflow-auto"
             style={{ height: "calc(100vh - 60px" }}
@@ -285,7 +283,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </Drawer>
+      </Drawer> */}
     </>
   );
 };

@@ -1,4 +1,3 @@
-import { message } from "antd";
 import parse from "react-html-parser";
 
 interface Location {
@@ -279,11 +278,11 @@ export const formatBytes = (bytes: number) => {
   return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
 };
 
-export const copyHandler = (copiedTxt: any, msg?: string) => {
-  if (!copiedTxt) return;
-  navigator.clipboard.writeText(copiedTxt);
-  message.success(msg || "Copied Successfully!");
-};
+// export const copyHandler = (copiedTxt: any, msg?: string) => {
+//   if (!copiedTxt) return;
+//   navigator.clipboard.writeText(copiedTxt);
+//   message.success(msg || "Copied Successfully!");
+// };
 
 // Camel Case
 
