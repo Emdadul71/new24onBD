@@ -1,13 +1,14 @@
 import { normalizedText } from "@/helpers/utils";
 import NewsCard from "@/modules/@common/@layout/news-card";
-import AdvertisementLeftSide from "@/modules/@common/advertisement/left_side";
-import AdvertisementPageTop from "@/modules/@common/advertisement/page_top";
 import AdvertisementSideSm from "@/modules/@common/advertisement/side_sm";
-import { Footer } from "@/modules/@common/footer";
-import Skeleton from "@/modules/@common/skeleton";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import SocialLinks from "../../../modules/@common/social_share";
 
+import React from "react";
+import { BsBoxArrowInUpRight } from "react-icons/bs";
+import AdvertisementPageTop from "@/modules/@common/advertisement/page_top";
+import { Footer } from "@/modules/@common/footer";
 const newsData = [
   {
     imgSrc: "/temp/news-card-22-alter.webp",
@@ -18,6 +19,24 @@ const newsData = [
   },
   {
     imgSrc: "/temp/news-card-22-alter.webp",
+    title: "রাসুল (সা.)–এর মমতা এক সাহাবির প্রতি",
+    desc: "ইসহাক ইবনু আমর ইবনু সালীত (রহ.) আবু বারযাহ (রা.)–এর বরাতে বর্ণনা করা হয়েছে যে, নবী (সা.) এক জিহাদে ছিলেন। আল্লাহ তাঁকে গনিমতের সম্পদ দিলেন। তিনি তাঁর সাহাবাদের বললেন, তোমরা কি কাউকে হারিয়েছ?",
+    date: "৫ জুলাই, ২০২২",
+  },
+  {
+    imgSrc: "/temp/news-card-4.webp",
+    title: "চট্টগ্রামে হোটেল থেকে বিদেশি নাগরিকের লাশ উদ্ধার",
+    desc: "চট্টগ্রাম নগরের জিইসি এলাকার অভিজাত একটি হোটেল থেকে আজ সোমবার দুপুরে এক বিদেশি নাগরিকের লাশ উদ্ধার করা হয়েছে। তাঁর নাম জদজিসলো মিসেল সিজারিবা (৫৮)। তিনি পোল্যান্ডের নাগরিক।",
+    date: "৫ জুলাই, ২০২২",
+  },
+  {
+    imgSrc: "/temp/news-card-5.webp",
+    title: "রাজধানীর মগবাজারে ১০ কেজি গাঁজাসহ নারী গ্রেপ্তার",
+    desc: "রাজধানীর মগবাজার এলাকায় গতকাল শনিবার অভিযান চালিয়ে গাঁজাসহ এক নারীকে গ্রেপ্তার করেছে ঢাকা মহানগর পুলিশের (ডিএমপি) গোয়েন্দা বিভাগ (ডিবি)। গ্রেপ্তার হওয়া নারীর নাম শারমিন আক্তার সুমি ওরফে সুখী। পুলিশ বলেছে, শারমিন একজন মাদক কারবারি। তাঁর কাছ থেকে ১০ কেজি গাঁজা ও মাদক বিক্রিতে ব্যবহৃত একটি মুঠোফোন জব্দ করা হয়েছে।",
+    date: "৫ জুলাই, ২০২২",
+  },
+  {
+    imgSrc: "/temp/firm-incedents.webp",
 
     title:
       "অগ্নিঝুঁকি রোধে নির্দেশনার বাস্তবায়ন নেই, মাইকিং করে দায়িত্ব শেষ সমিতির",
@@ -36,7 +55,8 @@ const newsData = [
     desc: "দেশীয় অর্থনীতির নয়টি প্রধান সূচকের মধ্যে ছয়টি নিয়ে নতুন সরকার বড় ধরনের চ্যালেঞ্জের মুখে রয়েছে। সূচক ছয়টি হচ্ছে বৈদেশিক মুদ্রার রিজার্ভ বা মজুত, আমদানির পরিমাণ, দেশীয় ঋণ, রপ্তানি প্রত্যাবাসন, খাদ্য মজুত ও মূল্যস্ফীতি। মূলত বৈশ্বিক ও স্থানীয় প্রতিকূলতাই এ পরিস্থিতির জন্য দায়ী। ব্যবসায়ীদের শীর্ষস্থানীয় সংগঠন মেট্রোপলিটন চেম্বার অব কমার্স অ্যান্ড ইন্ডাস্ট্রি (এমসিসিআই) তাদের ত্রৈমাসিক পর্যালোচনায় এমন অভিমত দিয়েছে। এমসিসিআই বলেছে, সরকার অর্থনৈতিক পতন মোকাবিলায় এরই মধ্যে দ্রুত ও দৃঢ় পদক্ষেপ নিয়েছে। তবে পরিস্থিতির উন্নয়নে আরও ",
   },
   {
-    imgSrc: "/temp/news-card-7cr.webp",
+    imgSrc: "/temp/news-card-7.webp",
+
     title: "মাঠে ফিরেই আবার রোনালদোকে শুনতে হলো ‘মেসি-মেসি’ স্লোগান",
     desc: "লা লিগায় লিওনেল মেসির সঙ্গে প্রায় এক দশকের দ্বৈরথে যতি টেনে ক্রিস্টিয়ানো রোনালদো রিয়াল মাদ্রিদ ছেড়েছেন ২০১৮ সালে। এখন তো দুজনের একজনও ইউরোপের ফুটবলেই নেই। রোনালদো সৌদি আরবে আর মেসি মার্কিন-মুলুকে। মাঠে দুজন মুখোমুখি হন কালেভদ্রে, কখনো কোনো প্রীতি ম্যাচে। মেসি আর রোনালদোর দুজন বিশ্বের দুই প্রান্তে ফুটবল খেললেও তাঁদের পুরোনো দ্বৈরথের ঝাঁজ এখনো রয়ে গেছে ভক্তদের মনে। আর সেই ঝাঁজটা মাঝেমধ্যেই টের পাচ্ছেন রোনালদো। সৌদি আরবের বিভিন্ন মাঠে তাঁকে খ্যাপাতে প্রতিপক্ষ দলের সমর্থকেরা কখনো কখনো ‘মেসি, মেসি’ স্লোগান দেন।",
   },
@@ -54,6 +74,7 @@ const newsData = [
   },
   {
     imgSrc: "/temp/news-card-11.webp",
+
     title: "পাখিই তাঁর স্বজন, পাখিই পরিবারের সদস্য",
     desc: "শুধু পাখি নয়, যেকোনো প্রাণীর প্রতি আকাশকলি দাসের ভালোবাসা ছোটবেলা থেকেই। ছোটবেলা থেকেই তাঁর নেশা ছিল রাস্তা থেকে বিপদে পড়া কুকুর ও বিড়াল বাড়িতে এনে আশ্রয় দেওয়া। ১০-১৫টি করে কুকুর ও বিড়াল সব সময় থাকে তাঁর বাড়িতে। ৪৫ থেকে ৫০ বছর আগের কথা তুলে ধরেন আকাশকলি। তিনি জানান, পৈতৃক সূত্রে তিনি যে বাড়িটি পেয়েছেন, তার বেশির ভাগই জঙ্গলে ভরা। সেখানে রয়েছে বিভিন্ন প্রজাতির বড় বড় গাছ। সেই সব গাছে পাখির ভিড় লেগেই থাকত। এসব পাখির প্রতি চোখ পড়ে শিকারিদের। বিষয়টি বুঝতে পেরে তিনি পাহারা দেওয়া শুরু করেন। পরে শিকারিরা আর আসতে সাহস করেননি। এরপর তিনি পাখিদের খাবারের ব্যবস্থা করেন। ভাত রেঁধে ভাত রেঁধে গাছের নিচে বেশ কিছুটা অংশজুড়ে কলাগাছের পাতায় পাখির জন্য রাখতে শুরু করেন। নিরাপদ আশ্রয় ও খাবার পেয়ে পাখির সংখ্যা দিন দিন বেড়েছে। আকাশকলি এখনো পাখিদের প্রতিদিন খাবারের ব্যবস্থা করে যাচ্ছেন।",
   },
@@ -64,121 +85,68 @@ const newsData = [
     desc: " মার্কিন সংবাদপত্র লস অ্যাঞ্জেলেস টাইমসের একটি প্রতিবেদনে বলা হয়, দৃষ্টিপ্রতিবন্ধী এক শিক্ষার্থী তোশিবার টি১০০০ টকিং ল্যাপটপের সুবিধা নিয়ে বিশ্ববিদ্যালয়ে তাঁর পড়াশোনা শেষ করেছেন এবং ডিগ্রি অর্জন করতে সক্ষম হয়েছেন। ইউনিভার্সিটি অব ক্যালিফোর্নিয়া লস অ্যাঞ্জেলেসে (ইউসিএলএ) কোর্স সম্পন্ন করতে এই ল্যাপটপ তাঁকে সহযোগিতা করে। ",
   },
 ];
-const TagListing = () => {
+const VideoDetails = () => {
   return (
-    <>
-      <section className="pt-4 pb-5">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_297px] gap-[30px]">
-            <div>
-              <AdvertisementPageTop className="mt-5" />
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                {newsData?.slice(4)?.map((item: any, i: any) => {
-                  const isFirst = i == 0;
-                  return (
-                    <>
-                      <NewsCard
-                        key={i}
-                        data={item}
-                        classes={{
-                          root: isFirst
-                            ? "lg:col-span-2 !relative"
-                            : "self-start",
-                          ImageWrapper: isFirst
-                            ? "h-[360px] lg:h-[372px]"
-                            : "h-[166px] mb-2",
-                          title: isFirst
-                            ? "text-base lg:text-[28px] lg:leading-9 text-white"
-                            : "heading-three",
-                          desc: isFirst ? "!hidden" : i > 1 ? "!hidden" : "",
-                          date: isFirst ? "!hidden" : "",
-                          body: isFirst
-                            ? "!absolute bottom-[20px] left-[26px] z-10 text-white"
-                            : "",
-                          social: "!hidden",
-                          overlay: isFirst ? "!block" : "",
-                        }}
-                      />
-                    </>
-                  );
-                })}
-              </div>
+    <section>
+      <div className="container">
+        <AdvertisementPageTop className="mt-5" />
+        <div className="grid lg:grid-cols-[1fr_297px] lg:gap-[30px]">
+          <div>
+            <div className="mb-5">
+              <iframe
+                width="820"
+                height="537"
+                src="https://www.youtube.com/embed/p2UFw750XOY?si=4x5ofYAMHTFZ_tUI"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title="Embedded youtube"
+                className="!w-full"
+              />
             </div>
-
-            <div>
-              <AdvertisementSideSm />
-
-              <div className="flex items-center gap-1 mb-3">
-                <Image
-                  title="Popular"
-                  src="/images/icon-fire.png"
-                  alt="Popular"
-                  width={16}
-                  height={16}
-                />
-                <h4 className="font-bold">{normalizedText("জনপ্রিয়")}</h4>
-              </div>
-              <div className="flex flex-col gap-5 lg:gap-3">
-                {newsData?.slice(5)?.map((item: any, i: any) => {
-                  return (
-                    <NewsCard
-                      key={i}
-                      data={item}
-                      classes={{
-                        root: "grid-cols-[105px_1fr] gap-[10px]",
-                        ImageWrapper: "!h-[62px]",
-                        title: "heading-custom-one",
-                        body: "!gap-0",
-                        desc: "!hidden",
-                        cat: "!hidden",
-                      }}
-                    />
-                  );
-                })}
-              </div>
-              <AdvertisementSideSm className="mt-6" />
-            </div>
+            <Link href="#">
+              <h1 className="heading-three hover:text-secondary">
+                দ্রব্যমূল্যের উর্ধ্বগতির প্রতিবাদে গণ অধিকার পরিষদের লিফলেট
+                বিতরণ| Nurul Haq Nur | Daily ittefaq
+              </h1>
+            </Link>
           </div>
-        </div>
-      </section>
-
-      <section>
-        <div className="container">
-          <AdvertisementPageTop className="mb-5" />
-          <div className="grid grid-cols-1 lg:grid-cols-[160px_1fr_250px] gap-4">
-            <div>
-              <AdvertisementLeftSide />
+          <div>
+            <AdvertisementSideSm />
+            <div className="flex items-center gap-1 mb-3">
+              <Image
+                title="Popular"
+                src="/images/icon-fire.png"
+                alt="Popular"
+                width={16}
+                height={16}
+              />
+              <h4 className="font-bold">{normalizedText("জনপ্রিয়")}</h4>
             </div>
-            <div>
-              {newsData?.map((item: any, i: any) => {
+            <div className="flex flex-col gap-5 lg:gap-3">
+              {newsData?.slice(5)?.map((item: any, i: any) => {
                 return (
-                  <>
-                    <NewsCard
-                      key={i}
-                      data={item}
-                      classes={{
-                        root: "lg:grid-cols-[306px_1fr] col-span-4 gap-[20px]",
-                        ImageWrapper: "!h-[162px]",
-                        ImageStyle: "!h-full",
-                        title: "heading-five !mb-1 lg:leading-[30px]",
-                        body: "!gap-0",
-                        desc: "text-base !mb-[2px]",
-                      }}
-                    />
-                    <div className="w-full h-[1px] bg-[#DBDADE] my-[15px]"></div>
-                  </>
+                  <NewsCard
+                    key={i}
+                    data={item}
+                    classes={{
+                      root: "grid-cols-[105px_1fr] gap-[10px]",
+                      ImageWrapper: "!h-[62px]",
+                      title: "heading-custom-one",
+                      body: "!gap-0",
+                      desc: "!hidden",
+                      cat: "!hidden",
+                    }}
+                  />
                 );
               })}
             </div>
-            <div>
-              <AdvertisementSideSm />
-              <Footer />
-            </div>
+            <AdvertisementSideSm className="mt-6" />
+            <Footer />
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
-export default TagListing;
+export default VideoDetails;

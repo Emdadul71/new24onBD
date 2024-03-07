@@ -12,7 +12,7 @@ const config: Config = {
       colors: {
         primary: "#1E184E ",
         secondary: "#D32027",
-        secondarylight: "#fefbf0",
+        secondarylight: "#fbedee",
         bluelight: "#f4fbff",
         body: "#666371",
         paragraph: "#2b2a29",

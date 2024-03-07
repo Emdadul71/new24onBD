@@ -1,13 +1,9 @@
-import { normalizedText } from "@/helpers/utils";
 import NewsCard from "@/modules/@common/@layout/news-card";
 import AdvertisementLeftSide from "@/modules/@common/advertisement/left_side";
 import AdvertisementPageTop from "@/modules/@common/advertisement/page_top";
 import AdvertisementSideSm from "@/modules/@common/advertisement/side_sm";
 import { Footer } from "@/modules/@common/footer";
-import Skeleton from "@/modules/@common/skeleton";
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
-
+import React from "react";
 const newsData = [
   {
     imgSrc: "/temp/news-card-22-alter.webp",
@@ -64,121 +60,50 @@ const newsData = [
     desc: " মার্কিন সংবাদপত্র লস অ্যাঞ্জেলেস টাইমসের একটি প্রতিবেদনে বলা হয়, দৃষ্টিপ্রতিবন্ধী এক শিক্ষার্থী তোশিবার টি১০০০ টকিং ল্যাপটপের সুবিধা নিয়ে বিশ্ববিদ্যালয়ে তাঁর পড়াশোনা শেষ করেছেন এবং ডিগ্রি অর্জন করতে সক্ষম হয়েছেন। ইউনিভার্সিটি অব ক্যালিফোর্নিয়া লস অ্যাঞ্জেলেসে (ইউসিএলএ) কোর্স সম্পন্ন করতে এই ল্যাপটপ তাঁকে সহযোগিতা করে। ",
   },
 ];
-const TagListing = () => {
+const Search = () => {
   return (
-    <>
-      <section className="pt-4 pb-5">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_297px] gap-[30px]">
-            <div>
-              <AdvertisementPageTop className="mt-5" />
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                {newsData?.slice(4)?.map((item: any, i: any) => {
-                  const isFirst = i == 0;
-                  return (
-                    <>
-                      <NewsCard
-                        key={i}
-                        data={item}
-                        classes={{
-                          root: isFirst
-                            ? "lg:col-span-2 !relative"
-                            : "self-start",
-                          ImageWrapper: isFirst
-                            ? "h-[360px] lg:h-[372px]"
-                            : "h-[166px] mb-2",
-                          title: isFirst
-                            ? "text-base lg:text-[28px] lg:leading-9 text-white"
-                            : "heading-three",
-                          desc: isFirst ? "!hidden" : i > 1 ? "!hidden" : "",
-                          date: isFirst ? "!hidden" : "",
-                          body: isFirst
-                            ? "!absolute bottom-[20px] left-[26px] z-10 text-white"
-                            : "",
-                          social: "!hidden",
-                          overlay: isFirst ? "!block" : "",
-                        }}
-                      />
-                    </>
-                  );
-                })}
-              </div>
-            </div>
-
-            <div>
-              <AdvertisementSideSm />
-
-              <div className="flex items-center gap-1 mb-3">
-                <Image
-                  title="Popular"
-                  src="/images/icon-fire.png"
-                  alt="Popular"
-                  width={16}
-                  height={16}
-                />
-                <h4 className="font-bold">{normalizedText("জনপ্রিয়")}</h4>
-              </div>
-              <div className="flex flex-col gap-5 lg:gap-3">
-                {newsData?.slice(5)?.map((item: any, i: any) => {
-                  return (
-                    <NewsCard
-                      key={i}
-                      data={item}
-                      classes={{
-                        root: "grid-cols-[105px_1fr] gap-[10px]",
-                        ImageWrapper: "!h-[62px]",
-                        title: "heading-custom-one",
-                        body: "!gap-0",
-                        desc: "!hidden",
-                        cat: "!hidden",
-                      }}
-                    />
-                  );
-                })}
-              </div>
-              <AdvertisementSideSm className="mt-6" />
-            </div>
+    <section>
+      <div className="container">
+        <AdvertisementPageTop className="my-6" />
+        <div className="grid grid-cols-1 lg:grid-cols-[160px_1fr_250px] gap-4">
+          <div>
+            <h1>অনুসন্ধান</h1>
           </div>
         </div>
-      </section>
-
-      <section>
-        <div className="container">
-          <AdvertisementPageTop className="mb-5" />
-          <div className="grid grid-cols-1 lg:grid-cols-[160px_1fr_250px] gap-4">
-            <div>
-              <AdvertisementLeftSide />
-            </div>
-            <div>
-              {newsData?.map((item: any, i: any) => {
-                return (
-                  <>
-                    <NewsCard
-                      key={i}
-                      data={item}
-                      classes={{
-                        root: "lg:grid-cols-[306px_1fr] col-span-4 gap-[20px]",
-                        ImageWrapper: "!h-[162px]",
-                        ImageStyle: "!h-full",
-                        title: "heading-five !mb-1 lg:leading-[30px]",
-                        body: "!gap-0",
-                        desc: "text-base !mb-[2px]",
-                      }}
-                    />
-                    <div className="w-full h-[1px] bg-[#DBDADE] my-[15px]"></div>
-                  </>
-                );
-              })}
-            </div>
-            <div>
-              <AdvertisementSideSm />
-              <Footer />
-            </div>
+        <div className="grid grid-cols-1 lg:grid-cols-[160px_1fr_250px] gap-4">
+          <div>
+            <AdvertisementLeftSide />
+          </div>
+          <div>
+            {newsData?.map((item: any, i: any) => {
+              return (
+                <>
+                  <NewsCard
+                    key={i}
+                    data={item}
+                    classes={{
+                      root: "lg:grid-cols-[306px_1fr] col-span-4 gap-[20px]",
+                      ImageWrapper: "!h-[162px]",
+                      ImageStyle: "!h-full",
+                      title: "heading-five !mb-1 lg:leading-[30px]",
+                      body: "!gap-0",
+                      desc: "text-base !mb-[2px]",
+                    }}
+                  />
+                  <div className="w-full h-[1px] bg-[#DBDADE] my-[15px]"></div>
+                </>
+              );
+            })}
+          </div>
+          <div>
+            <AdvertisementSideSm />
+            <AdvertisementSideSm />
+            <Footer />
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
-export default TagListing;
+export default Search;

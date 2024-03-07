@@ -13,7 +13,8 @@
   h4,
   h5,
   h6 {
-    @apply text-black font-bold text-[#353535] hover:text-secondary transition-all;
+    @apply text-black font-bold text-[#353535];
+    // hover:text-secondary transition-all
   }
   a {
     @apply hover:text-secondary transition-all;
