@@ -184,21 +184,42 @@ const NewsDetails = () => {
                   <div>
                     <p className="mb-6">আরও পড়ুন</p>
                     <div className="flex gap-[10px] flex-wrap">
-                      <span className="text-secondary py-1 px-3 rounded-full bg-secondarylight">
+                      <Link
+                        href="/tags/সর্বশেষ"
+                        className="text-secondary py-1 px-3 rounded-full bg-secondarylight"
+                      >
                         সর্বশেষ
-                      </span>
-                      <span className="text-secondary py-1 px-3 rounded-full bg-secondarylight">
+                      </Link>
+                      <Link
+                        href="/tags/বিশেষ-সংবাদ"
+                        className="text-secondary py-1 px-3 rounded-full bg-secondarylight"
+                      >
                         বিশেষ সংবাদ
-                      </span>
-                      <span className="text-secondary py-1 px-3 rounded-full bg-secondarylight">
+                      </Link>
+                      <Link
+                        href="/tags/সর্বশেষ"
+                        className="text-secondary py-1 px-3 rounded-full bg-secondarylight"
+                      >
                         রাজনীতি
-                      </span>
-                      <span className="text-secondary py-1 px-3 rounded-full bg-secondarylight">
-                        করোনাভাইরাস{" "}
-                      </span>
-                      <span className="text-secondary py-1 px-3 rounded-full bg-secondarylight">
-                        বাংলাদেশ{" "}
-                      </span>
+                      </Link>
+                      <Link
+                        href="/tags/সর্বশেষ"
+                        className="text-secondary py-1 px-3 rounded-full bg-secondarylight"
+                      >
+                        করোনাভাইরাস
+                      </Link>
+                      <Link
+                        href="/tags/সর্বশেষ"
+                        className="text-secondary py-1 px-3 rounded-full bg-secondarylight"
+                      >
+                        সর্বশেষ
+                      </Link>
+                      <Link
+                        href="/tags/সর্বশেষ"
+                        className="text-secondary py-1 px-3 rounded-full bg-secondarylight"
+                      >
+                        বাংলাদেশ
+                      </Link>
                     </div>
                     <div className="my-6">
                       <a

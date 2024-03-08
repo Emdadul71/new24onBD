@@ -6,7 +6,7 @@ import addArray from "../../../../helpers/data/ad_array.json";
 import addArray2 from "../../../../helpers/data/ad_array_leftside.json";
 import { useEffect, useState } from "react";
 
-const AdvertisementLeftSide = () => {
+const AdvertisementLeftSide = ({ className }: any) => {
   const { width } = useWindowDimensions();
   const isMobile = width < 1024;
   const [randomIndex2, setRandomIndex2] = useState(1);
@@ -27,6 +27,7 @@ const AdvertisementLeftSide = () => {
     <div>
       {!isMobile ? (
         <Advertisement
+          className={className}
           width={190}
           height={600}
           src={randomElement2.src}
@@ -34,6 +35,7 @@ const AdvertisementLeftSide = () => {
         />
       ) : (
         <Advertisement
+          className={className}
           width={730}
           height={90}
           src={randomElement.src}

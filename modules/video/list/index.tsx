@@ -2,6 +2,7 @@ import { normalizedText } from "@/helpers/utils";
 import NewsCard from "@/modules/@common/@layout/news-card";
 import AdvertisementPageTop from "@/modules/@common/advertisement/page_top";
 import AdvertisementSideSm from "@/modules/@common/advertisement/side_sm";
+import { Footer } from "@/modules/@common/footer";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -125,13 +126,16 @@ const VideoList = () => {
           <div>
             <AdvertisementPageTop className="mt-5" />
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-[30px] gap-y-5">
+            <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-x-[30px] gap-y-5">
               {newsData?.slice(4)?.map((item: any, i: any) => {
                 const isFirst = i == 0;
                 return (
                   <>
                     <div>
-                      <Link href="#" className="inline-block mb-1">
+                      <Link
+                        href="/video/মেঘনা-ও-তেঁতুলিয়া-নদীতে"
+                        className="inline-block mb-1"
+                      >
                         <Image
                           src="/temp/video-card-1.jpg"
                           alt="video News"
@@ -139,7 +143,7 @@ const VideoList = () => {
                           height={540}
                         />
                       </Link>
-                      <Link href="#">
+                      <Link href="/video/মেঘনা-ও-তেঁতুলিয়া-নদীতে">
                         <h2 className="heading-six font-semibold text-base hover:text-secondary transition-all line-clamp-2 mb-2">
                           মেঘনা ও তেঁতুলিয়া নদীতে মাছ ধরা ঠেকাতে অভিযান বিশেষ
                           আকর্ষণ | Fishing Restrictions
@@ -147,18 +151,15 @@ const VideoList = () => {
                       </Link>
                       <div className={`flex items-center flex-wrap gap-2 `}>
                         <Link
-                          href=""
+                          href="/source"
                           className="text-[13px] font-medium hover:text-secondary transition-all"
                         >
                           {normalizedText("Somoy TV")}
                         </Link>
                         <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
-                        <Link
-                          href=""
-                          className="text-[13px] font-medium  transition-all"
-                        >
+                        <span className="text-[13px] font-medium  transition-all">
                           {normalizedText("৫ জুলাই, ২০২২")}
-                        </Link>
+                        </span>
                       </div>
                     </div>
                   </>
@@ -191,6 +192,7 @@ const VideoList = () => {
               })}
             </div>
             <AdvertisementSideSm className="mt-6" />
+            <Footer />
           </div>
         </div>
       </div>

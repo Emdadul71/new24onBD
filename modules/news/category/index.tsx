@@ -75,7 +75,7 @@ const CategoryListing = () => {
             <div>
               <AdvertisementPageTop className="mt-5" />
 
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {newsData?.slice(4)?.map((item: any, i: any) => {
                   const isFirst = i == 0;
                   return (
@@ -147,19 +147,19 @@ const CategoryListing = () => {
       <section>
         <div className="container">
           <AdvertisementPageTop className="mb-5" />
-          <div className="grid grid-cols-1 lg:grid-cols-[160px_1fr_250px] gap-4">
+          <div className="grid grid-cols-1  lg:grid-cols-[160px_1fr_297px] gap-[30px] max-w-[1252px] mx-auto">
             <div>
               <AdvertisementLeftSide />
             </div>
             <div>
               {newsData?.map((item: any, i: any) => {
                 return (
-                  <>
+                  <div key={i}>
                     <NewsCard
                       key={i}
                       data={item}
                       classes={{
-                        root: "lg:grid-cols-[306px_1fr] col-span-4 gap-[20px]",
+                        root: "sm:grid-cols-2 lg:grid-cols-[306px_1fr] lg:col-span-4 gap-[20px]",
                         ImageWrapper: "!h-[162px]",
                         ImageStyle: "!h-full",
                         title: "heading-five !mb-1 lg:leading-[30px]",
@@ -168,7 +168,7 @@ const CategoryListing = () => {
                       }}
                     />
                     <div className="w-full h-[1px] bg-[#DBDADE] my-[15px]"></div>
-                  </>
+                  </div>
                 );
               })}
             </div>

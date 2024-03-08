@@ -5,15 +5,15 @@
   },
   {
     "title": "খবর",
-    "link": "/খবর"
+    "link": "/category/খবর"
   },
   {
     "title": "চাকরি",
-    "link": "/চাকরি"
+    "link": "/jobs"
   },
   {
     "title": "ভিডিও",
-    "link": "/ভিডিও"
+    "link": "/video"
   },
   {
     "title": "লাইভ নিউজ",

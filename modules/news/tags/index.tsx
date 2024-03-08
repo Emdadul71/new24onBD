@@ -145,7 +145,7 @@ const TagListing = () => {
       <section>
         <div className="container">
           <AdvertisementPageTop className="mb-5" />
-          <div className="grid grid-cols-1 lg:grid-cols-[160px_1fr_250px] gap-4">
+          <div className="grid grid-cols-1  lg:grid-cols-[160px_1fr_297px] gap-[30px] max-w-[1252px] mx-auto">
             <div>
               <AdvertisementLeftSide />
             </div>

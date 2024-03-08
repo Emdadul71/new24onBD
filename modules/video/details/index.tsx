@@ -9,6 +9,7 @@ import React from "react";
 import { BsBoxArrowInUpRight } from "react-icons/bs";
 import AdvertisementPageTop from "@/modules/@common/advertisement/page_top";
 import { Footer } from "@/modules/@common/footer";
+import SocialShare from "../../../modules/@common/social_share";
 const newsData = [
   {
     imgSrc: "/temp/news-card-22-alter.webp",
@@ -104,11 +105,113 @@ const VideoDetails = () => {
               />
             </div>
             <Link href="#">
-              <h1 className="heading-three hover:text-secondary">
+              <h1 className="heading-three hover:text-secondary mb-5">
                 দ্রব্যমূল্যের উর্ধ্বগতির প্রতিবাদে গণ অধিকার পরিষদের লিফলেট
                 বিতরণ| Nurul Haq Nur | Daily ittefaq
               </h1>
             </Link>
+            <div className="flex flex-col md:flex-row md:justify-between md:items-center border-b pb-5 mb-5">
+              <div className="flex items-center gap-3">
+                <div className="w-[24px] h-[24px] md:w-[60px] md:h-[60px]">
+                  <Image
+                    title="Popular"
+                    src="/temp/video-channel-icon.jpg"
+                    alt="Popular"
+                    width={60}
+                    height={60}
+                  />
+                </div>
+                <p className="mb-0 text-base">Daily Ittefaq</p>
+              </div>
+
+              <div>
+                <p className="mb-[6px] text-base">৪ মার্চ, ২০২৪ এ ৫:৫০ PM</p>
+                <SocialLinks
+                  sharedUrl="#"
+                  className={{
+                    root: "!justify-start  md:!justify-end",
+                  }}
+                />
+              </div>
+            </div>
+            <div className="border-b pb-5">
+              <p className="text-base font-normal">
+                👉 Don’t forget to Subscribe, Follow, Share, Comment, like, and
+                stay with us.
+              </p>
+              <p className="text-base font-normal">
+                Online News Portal: h <br />
+                Facebook: <br /> https://www.facebook.com/dainikittefaq <br />
+                https://www.facebook.com/Clickittefaq
+              </p>
+              <p className="text-base">
+                The Daily Ittefaq- known as one of the historic & eminent
+                newspapers of all time! The online platform of the Daily Ittefaq
+                has made its place as one of the most admired and most visited
+                websites worldwide. 
+              </p>
+              <p className="text-base">
+                Note: If you wish to share this video, please embed the link and
+                share the original source. Please avoid methods of copying or
+                duplicating the content, and help us support anti-piracy
+                measures in every possible way. Thank you! 
+              </p>
+              <p className="text-base">
+                The Daily Ittefaq began its journey on December 24, 1953 holding
+                the hand of Tofazzal Hossain Manik Miah. Currently Tasmima
+                Hossain is the Editor and Tareen Hossain is the Publisher of The
+                Daily Ittefaq. This fierce & reliable newspaper is moving
+                forward at its own pace winning the hearts of its own circle of
+                readers for decades. The intensity of this newspaper is
+                extremely high, being recognized as the oldest newspaper in
+                Bangladesh. Their historic touch in the deliverance of their
+                news still takes us back to the time of the Liberation War in
+                1971.
+              </p>
+              <p className="text-base">
+                The Daily Ittefaq <br /> Address: 40, Karwan Bazar, Dhaka 1215
+              </p>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-[30px] gap-y-5 mt-5">
+              {newsData?.slice(4)?.map((item: any, i: any) => {
+                const isFirst = i == 0;
+                return (
+                  <>
+                    <div>
+                      <Link href="#" className="inline-block mb-1">
+                        <Image
+                          src="/temp/video-card-1.jpg"
+                          alt="video News"
+                          width={960}
+                          height={540}
+                        />
+                      </Link>
+                      <Link href="#">
+                        <h2 className="heading-six font-semibold text-base hover:text-secondary transition-all line-clamp-2 mb-2">
+                          মেঘনা ও তেঁতুলিয়া নদীতে মাছ ধরা ঠেকাতে অভিযান বিশেষ
+                          আকর্ষণ | Fishing Restrictions
+                        </h2>
+                      </Link>
+                      <div className={`flex items-center flex-wrap gap-2 `}>
+                        <Link
+                          href=""
+                          className="text-[13px] font-medium hover:text-secondary transition-all"
+                        >
+                          {normalizedText("Somoy TV")}
+                        </Link>
+                        <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
+                        <Link
+                          href=""
+                          className="text-[13px] font-medium  transition-all"
+                        >
+                          {normalizedText("৫ জুলাই, ২০২২")}
+                        </Link>
+                      </div>
+                    </div>
+                  </>
+                );
+              })}
+            </div>
           </div>
           <div>
             <AdvertisementSideSm />
