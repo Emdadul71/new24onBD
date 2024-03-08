@@ -305,7 +305,7 @@ const JobList = () => {
                   বিস্তারিত দেখতে চাকরির শিরোনামে ক্লিক করুন
                 </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-[30px]">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 ">
                 {new Array(8).fill(1)?.map((_, i: any) => {
                   return (
                     <div key={i}>
@@ -337,20 +337,40 @@ const JobList = () => {
                         <h2 className="heading-six hover:text-secondary transition-all mb-[6px]">
                           Technical Manager
                         </h2>
+                      </Link>
 
+                      <Link
+                        href="/jobs/technical-manager"
+                        className="text-inherite"
+                      >
                         <p className="text-sm font-medium mb-2">
                           Bashundhara Group
                         </p>
-                        <div className="flex items-center gap-3 mb-2">
+                      </Link>
+                      <div className="flex items-center gap-3 mb-2">
+                        <Link
+                          href="/jobs/technical-manager"
+                          className="text-inherite"
+                        >
                           <div className="flex items-center gap-2">
                             <TbMapPinFilled />
                             <p className="mb-0 text-sm">Gulshan, Dhaka</p>
                           </div>
+                        </Link>
+                        <Link
+                          href="/jobs/technical-manager"
+                          className="text-inherite"
+                        >
                           <div className="flex items-center gap-[10px]">
                             <BsFillBriefcaseFill className="text-sm" />
                             <p className="mb-0 text-sm">At least 3 years</p>
                           </div>
-                        </div>
+                        </Link>
+                      </div>
+                      <Link
+                        href="/jobs/technical-manager"
+                        className="text-inherite"
+                      >
                         <div className="flex items-center gap-2 mb-[10px]">
                           <FaUserGraduate className="text-xs" />
                           <p className="mb-0 text-sm">
@@ -358,10 +378,11 @@ const JobList = () => {
                             Accounting
                           </p>
                         </div>
-                        <span className="px-3 py-1 bg-[#1E184E14] rounded-full text-sm">
-                          Deadline: 30 Mar 2024
-                        </span>
                       </Link>
+                      <span className="px-3 py-1 bg-[#1E184E14] rounded-full text-sm">
+                        Deadline: 30 Mar 2024
+                      </span>
+
                       <div className="w-full bg-[#DBDADE] h-[1px] my-[15px]"></div>
                     </div>
                   );
