@@ -40,7 +40,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="sticky top-0 bg-white dark:bg-neutral-800 z-[100]  shadow-sm dark:shadow">
+      <header className="sticky top-0 bg-white  z-[100]  shadow-sm ">
         <div className="container">
           <div className="grid lg:grid-cols-[auto_1fr_auto] gap-5 md:gap-[50px] items-center py-4 lg:py-0">
             <div className="flex justify-center">
