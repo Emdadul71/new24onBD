@@ -297,7 +297,7 @@ const JobList = () => {
       </section>
       <section>
         <div className="container">
-          <div className="grid  lg:grid-cols-[160px_1fr_297px] gap-[30px] max-w-[1140px] mx-auto">
+          <div className="grid  lg:grid-cols-[160px_1fr_297px]  max-w-[1140px] mx-auto">
             <AdvertisementLeftSide />
             <div>
               <div className="border-b pb-5 mb-4">
