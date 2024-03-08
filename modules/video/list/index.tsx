@@ -145,8 +145,9 @@ const VideoList = () => {
                       </Link>
                       <Link href="/video/মেঘনা-ও-তেঁতুলিয়া-নদীতে">
                         <h2 className="heading-six font-semibold text-base hover:text-secondary transition-all line-clamp-2 mb-2">
-                          মেঘনা ও তেঁতুলিয়া নদীতে মাছ ধরা ঠেকাতে অভিযান বিশেষ
-                          আকর্ষণ | Fishing Restrictions
+                          {normalizedText(
+                            "মেঘনা ও তেঁতুলিয়া নদীতে মাছ ধরা ঠেকাতে অভিযান বিশেষ আকর্ষণ | Fishing Restrictions"
+                          )}
                         </h2>
                       </Link>
                       <div className={`flex items-center flex-wrap gap-2 `}>
