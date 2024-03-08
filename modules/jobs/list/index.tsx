@@ -305,12 +305,12 @@ const JobList = () => {
                   বিস্তারিত দেখতে চাকরির শিরোনামে ক্লিক করুন
                 </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px]">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-[30px]">
                 {new Array(8).fill(1)?.map((_, i: any) => {
                   return (
                     <div key={i}>
                       <div
-                        className={`flex items-center justify-between items-center mb-1`}
+                        className={`flex items-center justify-between items-center mb-1 `}
                       >
                         <div className={`flex items-center flex-wrap gap-2 `}>
                           <Link
@@ -330,7 +330,10 @@ const JobList = () => {
 
                         <SocialShare sharedUrl="#" />
                       </div>
-                      <Link href="/jobs/technical-manager">
+                      <Link
+                        href="/jobs/technical-manager"
+                        className="text-inherite"
+                      >
                         <h2 className="heading-six hover:text-secondary transition-all mb-[6px]">
                           Technical Manager
                         </h2>
