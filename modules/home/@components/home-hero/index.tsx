@@ -254,9 +254,9 @@ const HomeHero = () => {
                                   <div className="flex items-center gap-3 mb-2">
                                     <div className="flex items-center gap-2">
                                       <TbMapPinFilled />
-                                      <p className="mb-0 text-sm">
+                                      <address className="mb-0 text-sm">
                                         Gulshan, Dhaka
-                                      </p>
+                                      </address>
                                     </div>
                                     <div className="flex items-center gap-[10px]">
                                       <BsFillBriefcaseFill className="text-sm" />
