@@ -175,7 +175,7 @@ const HomeHero = () => {
                                 <div>
                                   <Link
                                     href={`/video/${normalizedText(
-                                      " মেঘনা-ও-তেঁতুলিয়া-নদীতে"
+                                      "মেঘনা-ও-তেঁতুলিয়া-নদীতে"
                                     )}`}
                                     className="inline-block mb-1"
                                   >
@@ -188,7 +188,7 @@ const HomeHero = () => {
                                   </Link>
                                   <Link
                                     href={`/video/${normalizedText(
-                                      " মেঘনা-ও-তেঁতুলিয়া-নদীতে"
+                                      "মেঘনা-ও-তেঁতুলিয়া-নদীতে"
                                     )}`}
                                   >
                                     <h2 className="heading-six font-semibold text-base hover:text-secondary transition-all line-clamp-2 mb-2">
