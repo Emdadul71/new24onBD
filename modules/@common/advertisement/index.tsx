@@ -30,7 +30,7 @@ const Advertisement = ({
           <div className="relative">
             <button
               onClick={() => setShow(false)}
-              className="absolute right-[1px] top-[1px] hover:text-secondary bg-white dark:bg-neutral-800"
+              className="absolute right-[1px] top-[1px] hover:text-secondary bg-white"
             >
               <FiX />
             </button>

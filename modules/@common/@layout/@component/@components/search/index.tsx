@@ -51,7 +51,7 @@ export const Search = ({ pageType = "news" }: propTypes) => {
             <input
               id="search"
               type="text"
-              className="!mt-0 text-[15px] !px-4 py-[6px] w-full rounded-md dark:bg-neutral-800 bg-[#F4F4F4] focus:outline-0"
+              className="!mt-0 text-[15px] !px-4 py-[6px] w-full rounded-md  bg-[#F4F4F4] focus:outline-0"
               placeholder={placeholderFn()}
               onKeyUp={(e: any) => setText(e.target.value)}
               value={text}
@@ -60,7 +60,7 @@ export const Search = ({ pageType = "news" }: propTypes) => {
             <input
               id="search"
               type="text"
-              className="!mt-0 !px-4 py-[6px] w-full rounded-md dark:bg-neutral-800 bg-[#F4F4F4] focus:outline-0"
+              className="!mt-0 !px-4 py-[6px] w-full rounded-md  bg-[#F4F4F4] focus:outline-0"
               placeholder={placeholderFn()}
               onChange={(e: any) => setText(e.target.value)}
               value={text}

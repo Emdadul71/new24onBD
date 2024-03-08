@@ -215,7 +215,10 @@ const HomeHero = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-[30px] col-span-4 border-b pb-5">
                           {new Array(2).fill(1)?.map((_, i: any) => {
                             return (
-                              <div key={i}>
+                              <div
+                                key={i}
+                                className={`${i == 1 ? "border-l pl-5" : ""}`}
+                              >
                                 <div
                                   className={`flex items-center justify-between items-center mb-1 `}
                                 >
