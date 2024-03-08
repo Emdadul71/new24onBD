@@ -174,7 +174,9 @@ const HomeHero = () => {
                               <>
                                 <div>
                                   <Link
-                                    href="/video/মেঘনা-ও-তেঁতুলিয়া-নদীতে"
+                                    href={`/video/${normalizedText(
+                                      " মেঘনা-ও-তেঁতুলিয়া-নদীতে"
+                                    )}`}
                                     className="inline-block mb-1"
                                   >
                                     <Image
@@ -184,7 +186,11 @@ const HomeHero = () => {
                                       height={540}
                                     />
                                   </Link>
-                                  <Link href="/video/মেঘনা-ও-তেঁতুলিয়া-নদীতে">
+                                  <Link
+                                    href={`/video/${normalizedText(
+                                      " মেঘনা-ও-তেঁতুলিয়া-নদীতে"
+                                    )}`}
+                                  >
                                     <h2 className="heading-six font-semibold text-base hover:text-secondary transition-all line-clamp-2 mb-2">
                                       {normalizedText(
                                         "মেঘনা ও তেঁতুলিয়া নদীতে মাছ ধরা ঠেকাতে অভিযান বিশেষ আকর্ষণ | Fishing Restrictions"
