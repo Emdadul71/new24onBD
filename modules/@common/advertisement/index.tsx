@@ -38,6 +38,7 @@ const Advertisement = ({
               <Image
                 title="Advertisement"
                 alt="Advertisement"
+                priority
                 src={src}
                 width={width}
                 height={height}
