@@ -16,7 +16,7 @@ const CategoryList = ({ cat, setCat, title }: any) => {
   return (
     <>
       {catData?.length > 0 ? (
-        <div className="tags mb-10">
+        <div className="tags mb-2 lg:mb-10">
           <div className="flex items-center gap-1 mb-3">
             <Image
               src="/images/icon-fire.png"

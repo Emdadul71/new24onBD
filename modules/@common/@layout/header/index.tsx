@@ -50,7 +50,7 @@ const Header = () => {
                   width={140}
                   height={30}
                   alt="24onBD"
-                  priority={true}
+                  priority
                 />
               </Link>
             </div>

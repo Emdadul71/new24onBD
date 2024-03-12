@@ -30,7 +30,7 @@ const NewsCard = ({ classes, data }: propTypes) => {
       ></div>
       <Link
         href="/মাঠে-ফিরেই-আবার-রোনালদোকে-শুনতে-হলো"
-        className={`rounded-md h-[182px] ${
+        className={`rounded-md  ${
           classes?.ImageWrapper ? classes.ImageWrapper : ""
         }`}
       >
@@ -46,7 +46,7 @@ const NewsCard = ({ classes, data }: propTypes) => {
         />
       </Link>
       <div
-        className={`flex flex-col gap-[10px] ${
+        className={`flex flex-col lg:gap-[10px] ${
           classes?.body ? classes.body : ""
         }`}
       >
@@ -86,6 +86,7 @@ const NewsCard = ({ classes, data }: propTypes) => {
         </h1>
 
         <p className={`mb-0 line-clamp-2 ${classes?.desc ? classes.desc : ""}`}>
+          {" "}
           <Link
             href="/মাঠে-ফিরেই-আবার-রোনালদোকে-শুনতে-হলো"
             className="hover:text-inherit"

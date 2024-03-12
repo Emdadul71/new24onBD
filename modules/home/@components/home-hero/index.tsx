@@ -113,10 +113,10 @@ const HomeHero = () => {
     <>
       <section className="pt-4">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_297px] gap-[30px]">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_297px] gap-[30px]">
             <div>
               <AdvertisementPageTop className="mt-5" />
-              <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 ">
+              <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
                 {newsData?.map((item: any, i: any) => {
                   const isFirst = i == 0;
                   const isFifth = i == 4;
@@ -128,32 +128,40 @@ const HomeHero = () => {
                         data={item}
                         classes={{
                           root: isFirst
-                            ? "lg:grid-cols-2 col-span-4"
+                            ? "grid-cols-[118px_1fr] lg:grid-cols-2 col-span-4 gap-[10px] lg:gap-0 self-start"
                             : isTwoToFive
-                            ? "lg:grid-cols-1 col-span-4 lg:col-span-1"
-                            : `lg:grid-cols-[306px_1fr] col-span-4 gap-[20px] `,
+                            ? "grid-cols-[118px_1fr] lg:grid-cols-1 col-span-4 lg:col-span-1 gap-[10px] lg:gap-0 self-start "
+                            : `grid-cols-[118px_1fr] lg:grid-cols-[306px_1fr] col-span-4 gap-[10px] lg:gap-[20px] self-start items-center`,
                           title: isFirst
-                            ? "!heading-three lg:!text-white !hover:text-primary"
+                            ? "text-sm leading-[18px] lg:!heading-three lg:!text-white !hover:text-primary"
                             : isTwoToFive
-                            ? "!heading-six"
-                            : "!heading-five",
+                            ? "text-sm leading-[18px] lg:!heading-six"
+                            : "text-sm leading-[18px] lg:!heading-five",
                           ImageWrapper: isFirst
-                            ? "lg:!h-[334px] !rounded-l-none"
+                            ? "!h-[70px] lg:!h-[334px] !rounded-l-none mb-2 md:mb-0"
                             : isTwoToFive
-                            ? "!h-[124px] mb-3"
-                            : "",
+                            ? "!h-[70px] lg:!h-[124px] mb-3"
+                            : "!h-[70px] lg:!h-[182px]",
                           ImageStyle: isFirst ? "!rounded-l-none" : "",
                           body: isFirst
-                            ? "lg:!-order-1 !justify-start lg:bg-[#1E184E] lg:p-[30px] gap-[14px] !rounded-l-md"
+                            ? "lg:!-order-1 !justify-start lg:bg-[#1E184E] lg:p-[30px] lg:gap-[14px] !rounded-l-md"
                             : "",
                           desc: isFirst
-                            ? "!line-clamp-4 lg:!text-white"
+                            ? "lg:!line-clamp-4 lg:!text-white !hidden lg:flex"
                             : isTwoToFive
                             ? "!hidden"
-                            : "",
-                          date: isFirst ? "!lg:text-white" : "",
-                          social: isFirst ? "!hidden" : "",
-                          cat: isTwoToFive ? "!hidden" : "",
+                            : "hidden lg:flex lg:!line-clamp-2",
+                          date: isFirst
+                            ? "!lg:text-white"
+                            : isTwoToFive
+                            ? ""
+                            : "text-xs lg:text-[13px]",
+                          social: isFirst
+                            ? "!hidden"
+                            : isTwoToFive
+                            ? "!hidden"
+                            : "!hidden lg:!inline-flex",
+                          cat: isTwoToFive ? "lg:!hidden" : "",
                         }}
                       />
                       {isFifth && (
@@ -308,7 +316,7 @@ const HomeHero = () => {
                 <h4 className="font-bold">{normalizedText("জনপ্রিয়")}</h4>
               </div>
               <div className="flex flex-col gap-5 lg:gap-3">
-                {newsData?.slice(5)?.map((item: any, i: any) => {
+                {newsData?.slice(0, 5)?.map((item: any, i: any) => {
                   return (
                     <NewsCard
                       key={i}
