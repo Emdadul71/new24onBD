@@ -116,7 +116,7 @@ const HomeHero = () => {
           <div className="grid grid-cols-1 md:grid-cols-[1fr_297px] gap-[30px]">
             <div>
               <AdvertisementPageTop className="mt-5" />
-              <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                 {newsData?.map((item: any, i: any) => {
                   const isFirst = i == 0;
                   const isFifth = i == 4;
@@ -131,7 +131,7 @@ const HomeHero = () => {
                             ? "grid-cols-[118px_1fr] lg:grid-cols-2 col-span-4 gap-[10px] lg:gap-0 self-start"
                             : isTwoToFive
                             ? "grid-cols-[118px_1fr] lg:grid-cols-1 col-span-4 lg:col-span-1 gap-[10px] lg:gap-0 self-start "
-                            : `grid-cols-[118px_1fr] lg:grid-cols-[306px_1fr] col-span-4 gap-[10px] lg:gap-[20px] self-start items-center`,
+                            : `grid-cols-[118px_1fr] lg:grid-cols-[306px_1fr] col-span-4 gap-[10px] lg:gap-[20px] self-start `,
                           title: isFirst
                             ? "text-sm leading-[18px] lg:!heading-three lg:!text-white !hover:text-primary"
                             : isTwoToFive
@@ -140,7 +140,7 @@ const HomeHero = () => {
                           ImageWrapper: isFirst
                             ? "!h-[70px] lg:!h-[334px] !rounded-l-none mb-2 md:mb-0"
                             : isTwoToFive
-                            ? "!h-[70px] lg:!h-[124px] mb-3"
+                            ? "!h-[70px] lg:!h-[124px] lg:mb-3"
                             : "!h-[70px] lg:!h-[182px]",
                           ImageStyle: isFirst ? "!rounded-l-none" : "",
                           body: isFirst
@@ -152,9 +152,9 @@ const HomeHero = () => {
                             ? "!hidden"
                             : "hidden lg:flex lg:!line-clamp-2",
                           date: isFirst
-                            ? "!lg:text-white"
+                            ? " !lg:text-white"
                             : isTwoToFive
-                            ? ""
+                            ? "text-xs !lg:text-[13px]"
                             : "text-xs lg:text-[13px]",
                           social: isFirst
                             ? "!hidden"
