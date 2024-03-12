@@ -35,15 +35,11 @@ const NewsCard = ({ classes, data }: propTypes) => {
         }`}
       >
         <Image
-          src={
-            `${data?.imgSrc && data?.imgSrc != undefined && data?.imgSrc}` ||
-            "/misc/image_placeholder_big.webp"
-          }
-          width={306}
-          height={182}
+          src={`${data?.imgSrc}` || "/misc/image_placeholder_big.webp"}
+          width={960}
+          height={540}
           alt="Test"
-          priority={true}
-          rel="preload"
+          priority
           className={`rounded-md h-full w-full objecct-cover ${
             classes?.ImageStyle ? classes.ImageStyle : ""
           }`}
