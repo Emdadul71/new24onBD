@@ -119,17 +119,17 @@ const NewsDetails = () => {
                   </p>
                   <p className="mb-0 text-sm">প্রকাশ: জানুয়ারি ০৩, ২০২৪</p>
                 </div>
-                <div>
+                <div className="hidden lg:inline-flex">
                   <SocialLinks sharedUrl="#" />
                 </div>
               </div>
 
-              <div className="max-w-[676px] mx-auto grid lg:grid-cols-[24px_1fr] gap-9">
-                <div>
+              <div className="max-w-[676px] mx-auto grid grid-cols-[24px_1fr] gap-1 lg:gap-9">
+                <div className="mr-5 lg:mr-0">
                   <SocialLinks
                     sharedUrl="#"
                     className={{
-                      root: "flex-col mt-[250px] sticky top-[100px]",
+                      root: "flex-col mt-[250px] sticky top-[150px] lg:top-[100px]",
                     }}
                   />
                 </div>
@@ -269,13 +269,13 @@ const NewsDetails = () => {
                 </div>
               </div>
 
-              <div className="max-w-[676px] mx-auto grid lg:grid-cols-[24px_1fr] gap-9">
-                <div>
+              <div className="max-w-[676px] mx-auto grid grid-cols-[24px_1fr] gap-1 lg:gap-9">
+                <div className="mr-5 lg:mr-0">
                   {" "}
                   <SocialLinks
                     sharedUrl="#"
                     className={{
-                      root: "flex-col mt-[250px] sticky top-[100px]",
+                      root: "flex-col mt-[250px] sticky top-[150px] lg:top-[100px]",
                     }}
                   />
                 </div>
