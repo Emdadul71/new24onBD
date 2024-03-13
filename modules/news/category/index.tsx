@@ -85,16 +85,20 @@ const CategoryListing = () => {
                         data={item}
                         classes={{
                           root: isFirst
-                            ? "lg:col-span-2 !relative"
-                            : "self-start",
+                            ? " md:grid-cols-1 lg:col-span-2 !relative "
+                            : " grid-cols-[118px_1fr] md:grid-cols-1 self-start gap-3",
                           ImageWrapper: isFirst
                             ? "h-[360px] lg:h-[372px]"
-                            : "h-[166px] mb-2",
+                            : "h-[70px] lg:h-[166px] lg:mb-2",
                           title: isFirst
                             ? "text-base lg:text-[28px] lg:leading-9 text-white"
-                            : "heading-three",
-                          desc: isFirst ? "!hidden" : i > 1 ? "!hidden" : "",
-                          date: isFirst ? "!hidden" : "",
+                            : "text-sm leading-[18px] md:heading-three",
+                          desc: isFirst
+                            ? "!hidden"
+                            : i > 1
+                            ? "!hidden"
+                            : "!hidden md:flex !line-clamp-2",
+                          date: isFirst ? "!hidden" : "!text-xs md:text-[13px]",
                           body: isFirst
                             ? "!absolute bottom-[20px] left-[26px] z-10 text-white"
                             : "",
@@ -127,7 +131,7 @@ const CategoryListing = () => {
                       key={i}
                       data={item}
                       classes={{
-                        root: "grid-cols-[105px_1fr] gap-[10px]",
+                        root: "grid-cols-[118px_1fr] lg:grid-cols-[105px_1fr] gap-[10px]",
                         ImageWrapper: "!h-[62px]",
                         title: "heading-custom-one",
                         body: "!gap-0",
@@ -159,11 +163,14 @@ const CategoryListing = () => {
                       key={i}
                       data={item}
                       classes={{
-                        root: "sm:grid-cols-2 lg:grid-cols-[306px_1fr] lg:col-span-4 gap-[20px]",
-                        ImageWrapper: "!h-[162px]",
+                        root: "grid-cols-[118px_1fr] lg:grid-cols-[306px_1fr] lg:col-span-4 gap-3 lg:gap-[20px]",
+                        ImageWrapper: "!h-[70px] lg:!h-[162px]",
                         ImageStyle: "!h-full",
-                        title: "heading-five !mb-1 lg:leading-[30px]",
-                        desc: "text-base !mb-[2px]",
+                        title:
+                          "text-sm leading-[18px] md:heading-five !mb-1 lg:leading-[30px]",
+                        desc: "text-base !mb-[2px] hidden md:inline-flex md:!line-clamp-2",
+                        date: "!text-xs md:text-sm",
+                        social: "hidden lg:block",
                         body: "!gap-0",
                       }}
                     />
