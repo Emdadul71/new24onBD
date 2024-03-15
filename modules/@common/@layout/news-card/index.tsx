@@ -12,6 +12,7 @@ interface propTypes {
     title?: string;
     desc?: string;
     social?: string;
+    category?: string;
     cat?: string;
     date?: string;
     overlay?: string;
@@ -55,7 +56,11 @@ const NewsCard = ({ classes, data }: propTypes) => {
             classes?.cat ? classes.cat : ""
           }`}
         >
-          <div className={`flex items-center flex-wrap gap-2 `}>
+          <div
+            className={`flex items-center flex-wrap gap-2 ${
+              classes?.category ? classes?.category : ""
+            }`}
+          >
             <Link
               href=""
               className="text-xs font-medium text-secondary hover:text-secondary transition-all"

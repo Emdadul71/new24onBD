@@ -6,6 +6,8 @@ import AdvertisementSideSm from "@/modules/@common/advertisement/side_sm";
 import { Footer } from "@/modules/@common/footer";
 import Image from "next/image";
 import React from "react";
+import { CiSearch } from "react-icons/ci";
+import { IoIosSearch } from "react-icons/io";
 const newsData = [
   {
     imgSrc: "/temp/news-card-22-alter.webp",
@@ -69,19 +71,23 @@ const DashBoard = () => {
     <section>
       <div className="container">
         <AdvertisementPageTop className="mt-5" />
+        <div className=" border-b border-b-[#dbdade] border-b-[1px] pb-8 mb-8">
+          <div className="grid grid-cols-[268px_1fr] items-center max-w-[910px] gap-[56px] ">
+            <h3 className="text-[#4B4B4B] font-semibold">Recommended News</h3>
 
-        <div className="max-w-[967px] w-full grid grid-cols-[260px_500px] items-center gap-5 mb-8">
-          <h4>Recommended News</h4>
-
-          <input
-            type="text"
-            placeholder="অনুসন্ধান করুন"
-            className="border focus:outline-none px-2 py-1 w-full rounded-md"
-          />
+            <div className="w-full relative">
+              <input
+                type="text"
+                placeholder="অনুসন্ধান করুন"
+                className="border border-[#dbdade] focus:outline-none px-4 py-[13px] w-full  rounded-md"
+              />
+              <IoIosSearch className="absolute top-[50%] translate-y-[-50%] right-[16px] text-2xl" />
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1  lg:grid-cols-[160px_1fr_297px] gap-[30px] max-w-[1252px] mx-auto self-start">
-          <AdvertisementLeftSide className="sticky top-[100px] self-start !relative" />
+          <AdvertisementLeftSide className="sticky top-[100px] self-start " />
 
           <div>
             {newsData?.map((item: any, i: any) => {

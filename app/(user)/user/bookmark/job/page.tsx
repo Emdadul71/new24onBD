@@ -4,8 +4,13 @@ import AdvertisementLeftSide from "@/modules/@common/advertisement/left_side";
 import AdvertisementPageTop from "@/modules/@common/advertisement/page_top";
 import AdvertisementSideSm from "@/modules/@common/advertisement/side_sm";
 import { Footer } from "@/modules/@common/footer";
+import SocialShare from "@/modules/@common/social_share";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+import { BsFillBriefcaseFill } from "react-icons/bs";
+import { FaUserGraduate } from "react-icons/fa";
+import { TbMapPinFilled } from "react-icons/tb";
 const newsData = [
   {
     imgSrc: "/temp/news-card-22-alter.webp",
@@ -70,32 +75,92 @@ const BookmarkJob = () => {
       <div className="container">
         <AdvertisementPageTop className="mt-5" />
 
-        <h3 className="font-semibold mb-[6px] !text-[#4B4B4B]">
-          News Bookmarks
-        </h3>
-        <p className="text-[15px]">Manage Your News Bookmarks</p>
+        <div className="mb-7">
+          <h3 className="font-semibold mb-[6px] text-[#4B4B4B]">
+            Job Bookmarks
+          </h3>
+          <p className="text-[15px]">Manage Your Job Bookmarks</p>
+        </div>
 
         <div className="grid grid-cols-1  lg:grid-cols-[1fr_297px] gap-[30px] mx-auto self-start">
           <div>
             {newsData?.map((item: any, i: any) => {
               return (
                 <div key={i}>
-                  <NewsCard
-                    key={i}
-                    data={item}
-                    classes={{
-                      root: "grid-cols-[118px_1fr] lg:grid-cols-[306px_1fr] lg:col-span-4 gap-3 lg:gap-[20px] ",
-                      ImageWrapper: "!h-[70px] lg:!h-[162px]",
-                      ImageStyle: "!h-full",
-                      title:
-                        "text-sm leading-[18px] md:heading-five !mb-1 lg:leading-[30px]",
-                      desc: "text-base !mb-[2px] hidden md:inline-flex md:!line-clamp-2",
-                      date: "!text-xs md:text-sm",
-                      social: "hidden lg:block",
-                      body: "!gap-0",
-                    }}
-                  />
-                  <div className="w-full h-[1px] bg-[#DBDADE] my-[15px]"></div>
+                  <div
+                    className={`flex items-center justify-between items-center mb-1 `}
+                  >
+                    <div className={`flex items-center flex-wrap gap-2 `}>
+                      <Link
+                        href=""
+                        className="text-xs font-medium text-secondary hover:text-secondary transition-all"
+                      >
+                        Marketing/Sales
+                      </Link>
+                      <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
+                      <Link
+                        href=""
+                        className="text-xs font-medium hover:text-secondary transition-all"
+                      >
+                        bdjobs
+                      </Link>
+                    </div>
+
+                    <SocialShare sharedUrl="#" />
+                  </div>
+                  <Link
+                    href="/jobs/technical-manager"
+                    className="text-inherite"
+                  >
+                    <h2 className="heading-six hover:text-secondary transition-all mb-[6px]">
+                      Technical Manager
+                    </h2>
+                  </Link>
+
+                  <Link
+                    href="/jobs/technical-manager"
+                    className="text-inherite"
+                  >
+                    <p className="text-sm font-medium mb-2">
+                      Bashundhara Group
+                    </p>
+                  </Link>
+                  <div className="flex items-center gap-3 mb-2">
+                    <Link
+                      href="/jobs/technical-manager"
+                      className="text-inherite"
+                    >
+                      <div className="flex items-center gap-2">
+                        <TbMapPinFilled />
+                        <p className="mb-0 text-sm">Gulshan, Dhaka</p>
+                      </div>
+                    </Link>
+                    <Link
+                      href="/jobs/technical-manager"
+                      className="text-inherite"
+                    >
+                      <div className="flex items-center gap-[10px]">
+                        <BsFillBriefcaseFill className="text-sm" />
+                        <p className="mb-0 text-sm">At least 3 years</p>
+                      </div>
+                    </Link>
+                  </div>
+                  <Link
+                    href="/jobs/technical-manager"
+                    className="text-inherite"
+                  >
+                    <div className="flex items-center gap-2 mb-[10px]">
+                      <FaUserGraduate className="text-xs" />
+                      <p className="mb-0 text-sm">
+                        Bachelor of Business Administration (BBA) in Accounting
+                      </p>
+                    </div>
+                  </Link>
+                  <span className="px-3 py-1 bg-[#1E184E14] rounded-full text-sm">
+                    Deadline: 30 Mar 2024
+                  </span>
+
+                  <div className="w-full bg-[#DBDADE] h-[1px] my-[15px]"></div>
                 </div>
               );
             })}

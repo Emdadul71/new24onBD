@@ -90,6 +90,6 @@
     @apply border border-[#ebebed] bg-[#ebebed]  text-grey hover:border-[#d3d3d3] hover:bg-[#d3d3d3] transition-all;
   }
   .btn-white-outline {
-    @apply text-white border border-white transition-all;
+    @apply text-primary border border-primary transition-all;
   }
 }

@@ -7,6 +7,7 @@ import { Footer } from "@/modules/@common/footer";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { IoIosSearch } from "react-icons/io";
 const newsData = [
   {
     imgSrc: "/temp/news-card-22-alter.webp",
@@ -66,30 +67,42 @@ const newsData = [
   },
 ];
 const catData = [
-  { title: "সর্বশেষ", slug: "/সর্বশেষ" },
-  { title: "বিশেষ সংবাদ", slug: "/বিশেষ সংবাদ" },
-  { title: "রাজনীতি", slug: "/রাজনীতি" },
-  { title: "রাজনীতি", slug: "/রাজনীতি" },
-  { title: "সর্বশেষ", slug: "/সর্বশেষ" },
-  { title: "বিশেষ সংবাদ", slug: "/বিশেষ সংবাদ" },
-  { title: "রাজনীতি", slug: "/রাজনীতি" },
-  { title: "রাজনীতি", slug: "/রাজনীতি" },
-  { title: "সর্বশেষ", slug: "/সর্বশেষ" },
-  { title: "বিশেষ সংবাদ", slug: "/বিশেষ সংবাদ" },
-  { title: "রাজনীতি", slug: "/রাজনীতি" },
-  { title: "রাজনীতি", slug: "/রাজনীতি" },
-  { title: "সর্বশেষ", slug: "/সর্বশেষ" },
-  { title: "বিশেষ সংবাদ", slug: "/বিশেষ সংবাদ" },
-  { title: "রাজনীতি", slug: "/রাজনীতি" },
-  { title: "রাজনীতি", slug: "/রাজনীতি" },
-  { title: "সর্বশেষ", slug: "/সর্বশেষ" },
-  { title: "বিশেষ সংবাদ", slug: "/বিশেষ সংবাদ" },
-  { title: "রাজনীতি", slug: "/রাজনীতি" },
-  { title: "রাজনীতি", slug: "/রাজনীতি" },
-  { title: "সর্বশেষ", slug: "/সর্বশেষ" },
-  { title: "বিশেষ সংবাদ", slug: "/বিশেষ সংবাদ" },
-  { title: "রাজনীতি", slug: "/রাজনীতি" },
-  { title: "রাজনীতি", slug: "/রাজনীতি" },
+  { title: "করোনাভাইরাস আইন ও আদালত", slug: "/করোনাভাইরাস-আইন-ও-আদালত" },
+  { title: "আরীফুল ইসলাম মালয়েশিয়া", slug: "/আরীফুল-ইসলাম-মালয়েশিয়া" },
+  {
+    title: "টেকনাফ (কক্সবাজার) প্রতিনিধি",
+    slug: "/টেকনাফ-(কক্সবাজার)-প্রতিনিধি",
+  },
+  { title: "মদন (নেত্রকোনা) প্রতিনিধি", slug: "/মদন-(নেত্রকোনা)-প্রতিনিধি" },
+  { title: "যবিপ্রবি প্রতিনিধি", slug: "/যবিপ্রবি-প্রতিনিধি" },
+  { title: "দ্বাদশ জাতীয় সংসদ নির্বাচন", slug: "/দ্বাদশ জাতীয় সংসদ নির্বাচন" },
+  { title: "করোনাভাইরাস আইন ও আদালত", slug: "/করোনাভাইরাস-আইন-ও-আদালত" },
+  { title: "আরীফুল ইসলাম মালয়েশিয়া", slug: "/আরীফুল-ইসলাম-মালয়েশিয়া" },
+  { title: "করোনাভাইরাস আইন ও আদালত", slug: "/করোনাভাইরাস-আইন-ও-আদালত" },
+  { title: "আরীফুল ইসলাম মালয়েশিয়া", slug: "/আরীফুল-ইসলাম-মালয়েশিয়া" },
+  {
+    title: "টেকনাফ (কক্সবাজার) প্রতিনিধি",
+    slug: "/টেকনাফ-(কক্সবাজার)-প্রতিনিধি",
+  },
+  { title: "মদন (নেত্রকোনা) প্রতিনিধি", slug: "/মদন-(নেত্রকোনা)-প্রতিনিধি" },
+  { title: "যবিপ্রবি প্রতিনিধি", slug: "/যবিপ্রবি-প্রতিনিধি" },
+  { title: "করোনাভাইরাস আইন ও আদালত", slug: "/করোনাভাইরাস-আইন-ও-আদালত" },
+  { title: "আরীফুল ইসলাম মালয়েশিয়া", slug: "/আরীফুল-ইসলাম-মালয়েশিয়া" },
+  {
+    title: "টেকনাফ (কক্সবাজার) প্রতিনিধি",
+    slug: "/টেকনাফ-(কক্সবাজার)-প্রতিনিধি",
+  },
+  { title: "মদন (নেত্রকোনা) প্রতিনিধি", slug: "/মদন-(নেত্রকোনা)-প্রতিনিধি" },
+  { title: "যবিপ্রবি প্রতিনিধি", slug: "/যবিপ্রবি-প্রতিনিধি" },
+  { title: "করোনাভাইরাস আইন ও আদালত", slug: "/করোনাভাইরাস-আইন-ও-আদালত" },
+  { title: "আরীফুল ইসলাম মালয়েশিয়া", slug: "/আরীফুল-ইসলাম-মালয়েশিয়া" },
+  {
+    title: "টেকনাফ (কক্সবাজার) প্রতিনিধি",
+    slug: "/টেকনাফ-(কক্সবাজার)-প্রতিনিধি",
+  },
+  { title: "মদন (নেত্রকোনা) প্রতিনিধি", slug: "/মদন-(নেত্রকোনা)-প্রতিনিধি" },
+  { title: "যবিপ্রবি প্রতিনিধি", slug: "/যবিপ্রবি-প্রতিনিধি" },
+  { title: "দ্বাদশ জাতীয় সংসদ নির্বাচন", slug: "/দ্বাদশ জাতীয় সংসদ নির্বাচন" },
 ];
 const Topic = () => {
   return (
@@ -103,25 +116,59 @@ const Topic = () => {
               <h3 className="font-semibold mb-[6px] !text-[#4B4B4B]">Topic</h3>
               <p className="text-[15px]">Manage Your Topic</p>
             </div>
-            <h5 className="font-semibold mb-[6px] !text-[#4B4B4B] mb-6">
-              Categories
-            </h5>
-            <div className="flex gap-3 flex-wrap border px-4 py-5">
-              {catData?.map((item: any, i: any) => {
-                return (
-                  <li
-                    key={i}
-                    className={`text-xs inline-block px-3 py-1 font-heading leading-5 rounded-full border border-[#EB5842] text-[#EB5842] hover:bg-[#FDEEEC] transition-all cursor-pointer !w-[220px]`}
-                  >
-                    <Link
-                      href={`${`/category/${normalizedText("সর্বশেষ")}`}`}
-                      className="!w-[220px]"
+
+            <div>
+              <div className="mb-4 relative">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Search Keywords"
+                    className="border w-full pl-[46px] pr-[11f0px] py-[10px] focus:outline-none rounded-md"
+                  />
+
+                  <IoIosSearch className="absolute top-[50%] translate-y-[-50%] left-[16px] text-2xl" />
+                  <button className="btn btn-secondary absolute top-[50%] translate-y-[-50%] right-[16px] py-1">
+                    Search
+                  </button>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 mb-5">
+                Trending Topics:{" "}
+                <div className="flex flex-wrap gap-2">
+                  {catData?.slice(0, 3)?.map((item: any, i: any) => {
+                    return (
+                      <li
+                        key={i}
+                        className={`text-[15px] inline-block px-3 py-1 font-heading leading-5 rounded-full text-secondary bg-[#FDEEEC] hover:bg-[#FDEEEC] transition-all cursor-pointer`}
+                      >
+                        <Link
+                          href={`${`/category/${normalizedText("সর্বশেষ")}`}`}
+                          className="!w-[220px]"
+                        >
+                          {normalizedText(item.title)}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </div>
+              </div>
+              <div className="flex gap-3 flex-wrap border px-4 py-5 ">
+                {catData?.map((item: any, i: any) => {
+                  return (
+                    <li
+                      key={i}
+                      className={`text-base inline-block px-5 py-[10px] font-heading leading-5 rounded-full border border-[#EB5842] text-secondary hover:bg-[#FDEEEC] transition-all cursor-pointer !w-[290px]`}
                     >
-                      {normalizedText(item.title)}
-                    </Link>
-                  </li>
-                );
-              })}
+                      <Link
+                        href={`${`/category/${normalizedText("সর্বশেষ")}`}`}
+                        className="!w-[220px]"
+                      >
+                        {normalizedText(item.title)}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </div>
             </div>
           </div>
           <div className="sticky !top-[100px] self-start">

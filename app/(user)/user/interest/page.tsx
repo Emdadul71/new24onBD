@@ -67,9 +67,9 @@ const newsData = [
 ];
 const catData = [
   { title: "সর্বশেষ", slug: "/সর্বশেষ" },
-  { title: "বিশেষ সংবাদ", slug: "/বিশেষ সংবাদ" },
-  { title: "রাজনীতি", slug: "/রাজনীতি" },
-  { title: "রাজনীতি", slug: "/রাজনীতি" },
+  { title: "করোনাভাইরাস", slug: "/করোনাভাইরাস" },
+  { title: "আইন ও আদালত", slug: "/রাজনীতি" },
+  { title: "জলবায়ু ও পরিবেশ", slug: "/রাজনীতি" },
   { title: "সর্বশেষ", slug: "/সর্বশেষ" },
   { title: "বিশেষ সংবাদ", slug: "/বিশেষ সংবাদ" },
   { title: "রাজনীতি", slug: "/রাজনীতি" },
@@ -105,15 +105,13 @@ const Interest = () => {
               </h3>
               <p className="text-[15px]">Manage Your Interest</p>
             </div>
-            <h5 className="font-semibold mb-[6px] !text-[#4B4B4B] mb-6">
-              Categories
-            </h5>
-            <div className="flex gap-3 flex-wrap border px-4 py-5">
+            <h5 className="font-semibold  mb-6">Categories</h5>
+            <div className="flex gap-x-[13px] gap-y-[14px] flex-wrap border px-4 py-5">
               {catData?.map((item: any, i: any) => {
                 return (
                   <li
                     key={i}
-                    className={`text-xs inline-block px-3 py-1 font-heading leading-5 rounded-full border border-[#EB5842] text-[#EB5842] hover:bg-[#FDEEEC] transition-all cursor-pointer !w-[220px]`}
+                    className={`text-xs inline-block px-5 py-[10px] font-heading leading-5 rounded-full border border-[#EB5842] text-[#EB5842] hover:bg-[#FDEEEC] transition-all cursor-pointer !w-[210px]`}
                   >
                     <Link
                       href={`${`/category/${normalizedText("সর্বশেষ")}`}`}

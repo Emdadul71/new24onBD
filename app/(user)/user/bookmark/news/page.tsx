@@ -69,11 +69,12 @@ const BookmarkNews = () => {
     <section>
       <div className="container">
         <AdvertisementPageTop className="mt-5" />
-
-        <h3 className="font-semibold mb-[6px] !text-[#4B4B4B]">
-          News Bookmarks
-        </h3>
-        <p className="text-[15px] text-red-500">Manage Your News Bookmarks</p>
+        <div className="mb-7">
+          <h3 className="font-semibold mb-[6px] text-[#4B4B4B]">
+            News Bookmarks
+          </h3>
+          <p className="text-[15px]">Manage Your News Bookmarks</p>
+        </div>
 
         <div className="grid grid-cols-1  lg:grid-cols-[1fr_297px] gap-[30px] mx-auto self-start">
           <div>
