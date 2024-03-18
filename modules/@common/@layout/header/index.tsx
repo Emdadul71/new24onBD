@@ -192,7 +192,7 @@ const Header = () => {
                 <Search />
                 <button className="btn btn-secondary">লগ ইন</button>
               </div>
-              <CustomPopover />
+              {/* <CustomPopover /> */}
             </div>
           </div>
         </div>
