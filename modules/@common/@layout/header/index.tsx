@@ -2,13 +2,12 @@
 import navData from "@/helpers/data/nav.json";
 import Image from "next/image";
 import Link from "next/link";
-import { Fragment, useEffect, useState } from "react";
-import { BiMenuAltLeft } from "react-icons/bi";
-import { FiChevronDown, FiChevronUp, FiHeart } from "react-icons/fi";
-import styles from "./header.module.scss";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { FiChevronDown } from "react-icons/fi";
+import CustomPopover from "../../custom-popover";
 import Search from "../@component/@components/search";
-import { FaRegUserCircle } from "react-icons/fa";
+import styles from "./header.module.scss";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -188,10 +187,12 @@ const Header = () => {
                 </ul>
               </nav>
             )}
-
-            <div className="flex  gap-5 w-full">
-              <Search />
-              <button className="btn btn-secondary">লগ ইন</button>
+            <div className="flex gap-3 items-center">
+              <div className="flex  gap-5 w-full">
+                <Search />
+                <button className="btn btn-secondary">লগ ইন</button>
+              </div>
+              <CustomPopover />
             </div>
           </div>
         </div>

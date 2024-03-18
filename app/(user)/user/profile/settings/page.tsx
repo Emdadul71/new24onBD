@@ -8,7 +8,7 @@ import { FaRegEdit } from "react-icons/fa";
 import { FiEdit, FiUser } from "react-icons/fi";
 import { IoLogOutOutline, IoSettingsOutline } from "react-icons/io5";
 
-const Personalinfo = ({ id }: any) => {
+const SettingsUpdate = ({ id }: any) => {
   const [divisionId, setDivisionId] = useState();
   const [districtId, setDistrictId] = useState();
 
@@ -31,7 +31,7 @@ const Personalinfo = ({ id }: any) => {
       <section>
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-[30px] pt-[50px]">
-            <div className="flex flex-col justify-center items-center gap-[30px] border px-5 py-[30px] rounded-md self-start">
+            <div className="flex flex-col justify-center items-center gap-5 lg:gap-[30px] border px-5 py-[30px] rounded-md self-start">
               <div className="flex flex-col items-center gap-[10px] ">
                 <div className="w-[128px] h-[128px] rounded-full relative">
                   <Image
@@ -72,12 +72,13 @@ const Personalinfo = ({ id }: any) => {
                 </div>
               </div>
             </div>
+
             <div className="p-[30px] border rounded-md flex flex-col gap-[30px]">
               <div className="flex justify-between items-start w-full">
                 <div>
-                  <h3>Personal Info</h3>
+                  <h3>Settings</h3>
                   <p className="mb-0 text-[15px]">
-                    Basic info, for a better experience
+                    Manage your email address, mobile number and password
                   </p>
                 </div>
                 <Link href="" className="btn btn-white">
@@ -85,19 +86,22 @@ const Personalinfo = ({ id }: any) => {
                   Edit
                 </Link>
               </div>
-              <div className="grid grid-cols-[120px_1fr] gap-6">
-                <p className="mb-0 text-[15px]">Full Name</p>
-                <p className="mb-0 text-[15px]">Savannah Nguyen</p>
+              <div className="grid grid-cols-1 lg:grid-cols-[120px_1fr] gap-6">
+                <p className="mb-0 text-[15px]">Email</p>
+                <p className="mb-0 text-[15px]">michael.mitc@example.com</p>
                 <div className="w-full h-[1px] bg-[#DBDADE] col-span-2"></div>
-                <p className="mb-0 text-[15px]">Date of Birth</p>
-                <p className="mb-0 text-[15px]">12/09/1989</p>
+                <p className="mb-0 text-[15px]">Phone</p>
+                <p className="mb-0 text-[15px]">(405) 555-0128</p>
                 <div className="w-full h-[1px] bg-[#DBDADE] col-span-2"></div>
-                <p className="mb-0 text-[15px]">Country</p>
-                <p className="mb-0 text-[15px]">Bangladesh</p>
-                <div className="w-full h-[1px] bg-[#DBDADE] col-span-2"></div>
-                <p className="mb-0 text-[15px]">Gender</p>
-                <p className="mb-0 text-[15px]">Male</p>
-                <div className="w-full h-[1px] bg-[#DBDADE] col-span-2"></div>
+                <p className="mb-0 text-[15px]">Password</p>
+                <p className="mb-0 text-[15px]">
+                  <Link
+                    href=""
+                    className="font-semibold text-[#00006D] pl-3 lg:pl-0"
+                  >
+                    Change Password?
+                  </Link>
+                </p>
               </div>
               <div className="flex justify-end">
                 <div className="flex gap-3">
@@ -113,4 +117,4 @@ const Personalinfo = ({ id }: any) => {
   );
 };
 
-export default Personalinfo;
+export default SettingsUpdate;

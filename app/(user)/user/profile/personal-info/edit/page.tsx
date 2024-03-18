@@ -1,18 +1,27 @@
 "use client";
 
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Checkbox } from "@radix-ui/react-checkbox";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { BiCamera } from "react-icons/bi";
 import { FaRegEdit } from "react-icons/fa";
 import { FiEdit, FiUser } from "react-icons/fi";
+import { IoIosCalendar } from "react-icons/io";
 import { IoLogOutOutline, IoSettingsOutline } from "react-icons/io5";
 
 const PersonalInfoEdit = () => {
   return (
     <section>
       <div className="container">
-        <div className="grid grid-cols-[300px_1fr] gap-[30px] pt-[50px]">
+        <div className="grid lg:grid-cols-[300px_1fr] gap-[30px] pt-[50px]">
           <div className="flex flex-col justify-center items-center gap-[30px] border px-5 py-[30px] rounded-md self-start">
             <div className="flex flex-col items-center gap-[10px] ">
               <div className="w-[128px] h-[128px] rounded-full relative">
@@ -52,7 +61,7 @@ const PersonalInfoEdit = () => {
               </div>
             </div>
           </div>
-          <div className="p-[30px] border rounded-md flex flex-col gap-[30px]">
+          <div className="p-5 lg:p-[30px] border rounded-md flex flex-col gap-[30px]">
             <div className="flex justify-between items-start w-full">
               <div>
                 <h3>Personal Info</h3>
@@ -61,16 +70,92 @@ const PersonalInfoEdit = () => {
                 </p>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-6">
-              <div>
-                <label htmlFor="">Full Name</label>
-                <input type="text" />
+            <div className="grid lg:grid-cols-2 gap-6">
+              <div className="flex flex-col gap-[10px]">
+                <label
+                  htmlFor=""
+                  className="text-xs text-[#353535] font-semibold"
+                >
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  placeholder="Md. Mamun Hossain"
+                  className="px-4 py-3 border border-[#DBDADE] focus:outline-none rounded-md"
+                />
               </div>
-              <p className="mb-0 text-[15px]">Savannah Nguyen</p>
-              <p className="mb-0 text-[15px]">Date of Birth</p>
-              <p className="mb-0 text-[15px]">12/09/1989</p>
-              <p className="mb-0 text-[15px]">Country</p>
-              <p className="mb-0 text-[15px]">Bangladesh</p>
+              <div className="flex flex-col gap-[10px]">
+                <label
+                  htmlFor=""
+                  className="text-xs text-[#353535] font-semibold"
+                >
+                  Date of Birth
+                </label>
+                <div className="relative">
+                  <input
+                    type="text"
+                    placeholder="Select Date"
+                    className="pl-4 pr-12 py-3 border border-[#DBDADE] focus:outline-none rounded-md w-full"
+                  />
+                  <IoIosCalendar className="absolute right-[20px] top-[50%] translate-y-[-50%] text-xl" />
+                </div>
+              </div>
+              <div className="flex flex-col gap-[10px]">
+                <label
+                  htmlFor=""
+                  className="text-xs text-[#353535] font-semibold"
+                >
+                  Country
+                </label>
+                <Select>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select Country" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="bangladesh">Bangladesh</SelectItem>
+                    <SelectItem value="usa">USA</SelectItem>
+                    <SelectItem value="Canada">Canada</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="flex flex-col gap-[10px]">
+                <label
+                  htmlFor=""
+                  className="text-xs text-[#353535] font-semibold"
+                >
+                  Gender
+                </label>
+                <div className="items-center h-full flex space-x-2">
+                  <div className="flex gap-3 items-center">
+                    <Checkbox
+                      id="terms1"
+                      className="w-[16px] h-[16px] border"
+                    />
+                    <div className="grid gap-1.5 leading-none">
+                      <label
+                        htmlFor="terms1"
+                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      >
+                        Accept
+                      </label>
+                    </div>
+                  </div>
+                  <div className="flex gap-3 items-center">
+                    <Checkbox
+                      id="terms2"
+                      className="w-[16px] h-[16px] border"
+                    />
+                    <div className="grid gap-1.5 leading-none">
+                      <label
+                        htmlFor="terms2"
+                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      >
+                        Accept
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="flex justify-end">
               <div className="flex gap-3">
