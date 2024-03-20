@@ -1,4 +1,6 @@
+"use client";
 import { normalizedText } from "@/helpers/utils";
+import useWindowDimensions from "@/hooks/useWindowDimensions";
 import NewsCard from "@/modules/@common/@layout/news-card";
 import Advertisement from "@/modules/@common/advertisement";
 import AdvertisementPageTop from "@/modules/@common/advertisement/page_top";
@@ -16,7 +18,7 @@ import { TbMapPinFilled } from "react-icons/tb";
 
 const newsData = [
   {
-    imgSrc: "/temp/news-card-22-alter.webp",
+    imgSrc: "/temp/news-card-11.webp",
     title:
       "ধানমন্ডির টুইন পিক ভবনের রুফটপ রেস্তোরাঁ ভাঙল রাজউক, ১২ রেস্তোরাঁ সিলগালা ধানমন্ডির টুইন পিক ভবনের রুফটপ রেস্তোরাঁ ভাঙল রাজউক, ১২ রেস্তোরাঁ সিলগালা",
     desc: "রাজধানীর ধানমন্ডির সাতমসজিদ সড়কের গাউসিয়া টুইন পিক ভবনে একটি রুফটপ রেস্তোরাঁ ভেঙে ফেলা হয়েছে। এ ছাড়া ওই ভবনের ১২টি রেস্তোরাঁ সিলগালা করে দিয়েছে রাজধানী উন্নয়ন কর্তৃপক্ষ। নির্বাহী ম্যাজিস্ট্রেট বলছেন, ভবনটিতে অফিস করার অনুমতি থাকলেও রেস্তোরাঁ করার অনুমতি ছিল না। গত ২৩ মে রাজউক এই ভবন পরিদর্শনে এসে নোটিশ দিয়েছিল। আজ সোমবার রাজউকের অঞ্চল–৩–এর পরিচালক ও নির্বাহী ম্যাজিস্ট্রেট তাজিনা সারোয়ার এই অভিযান পরিচালনা করেন। বেলা ১১টার পর অভিযান শুরু হয়। তবে এর আগেই ভবনের রেস্তোরাঁগুলো বন্ধ ছিল।",
@@ -84,6 +86,12 @@ const newsData = [
     desc: "শুধু পাখি নয়, যেকোনো প্রাণীর প্রতি আকাশকলি দাসের ভালোবাসা ছোটবেলা থেকেই। ছোটবেলা থেকেই তাঁর নেশা ছিল রাস্তা থেকে বিপদে পড়া কুকুর ও বিড়াল বাড়িতে এনে আশ্রয় দেওয়া। ১০-১৫টি করে কুকুর ও বিড়াল সব সময় থাকে তাঁর বাড়িতে। ৪৫ থেকে ৫০ বছর আগের কথা তুলে ধরেন আকাশকলি। তিনি জানান, পৈতৃক সূত্রে তিনি যে বাড়িটি পেয়েছেন, তার বেশির ভাগই জঙ্গলে ভরা। সেখানে রয়েছে বিভিন্ন প্রজাতির বড় বড় গাছ। সেই সব গাছে পাখির ভিড় লেগেই থাকত। এসব পাখির প্রতি চোখ পড়ে শিকারিদের। বিষয়টি বুঝতে পেরে তিনি পাহারা দেওয়া শুরু করেন। পরে শিকারিরা আর আসতে সাহস করেননি। এরপর তিনি পাখিদের খাবারের ব্যবস্থা করেন। ভাত রেঁধে ভাত রেঁধে গাছের নিচে বেশ কিছুটা অংশজুড়ে কলাগাছের পাতায় পাখির জন্য রাখতে শুরু করেন। নিরাপদ আশ্রয় ও খাবার পেয়ে পাখির সংখ্যা দিন দিন বেড়েছে। আকাশকলি এখনো পাখিদের প্রতিদিন খাবারের ব্যবস্থা করে যাচ্ছেন।",
   },
   {
+    imgSrc: "/temp/news-card-11.webp",
+
+    title: "পাখিই তাঁর স্বজন, পাখিই পরিবারের সদস্য",
+    desc: "শুধু পাখি নয়, যেকোনো প্রাণীর প্রতি আকাশকলি দাসের ভালোবাসা ছোটবেলা থেকেই। ছোটবেলা থেকেই তাঁর নেশা ছিল রাস্তা থেকে বিপদে পড়া কুকুর ও বিড়াল বাড়িতে এনে আশ্রয় দেওয়া। ১০-১৫টি করে কুকুর ও বিড়াল সব সময় থাকে তাঁর বাড়িতে। ৪৫ থেকে ৫০ বছর আগের কথা তুলে ধরেন আকাশকলি। তিনি জানান, পৈতৃক সূত্রে তিনি যে বাড়িটি পেয়েছেন, তার বেশির ভাগই জঙ্গলে ভরা। সেখানে রয়েছে বিভিন্ন প্রজাতির বড় বড় গাছ। সেই সব গাছে পাখির ভিড় লেগেই থাকত। এসব পাখির প্রতি চোখ পড়ে শিকারিদের। বিষয়টি বুঝতে পেরে তিনি পাহারা দেওয়া শুরু করেন। পরে শিকারিরা আর আসতে সাহস করেননি। এরপর তিনি পাখিদের খাবারের ব্যবস্থা করেন। ভাত রেঁধে ভাত রেঁধে গাছের নিচে বেশ কিছুটা অংশজুড়ে কলাগাছের পাতায় পাখির জন্য রাখতে শুরু করেন। নিরাপদ আশ্রয় ও খাবার পেয়ে পাখির সংখ্যা দিন দিন বেড়েছে। আকাশকলি এখনো পাখিদের প্রতিদিন খাবারের ব্যবস্থা করে যাচ্ছেন।",
+  },
+  {
     imgSrc: "/temp/news-card-10.webp",
     title:
       "কথা বলা ল্যাপটপের সাহায্য নিয়ে দৃষ্টিপ্রতিবন্ধী শিক্ষার্থী স্নাতক হলেন",
@@ -102,21 +110,42 @@ const newsData = [
     desc: "শুধু পাখি নয়, যেকোনো প্রাণীর প্রতি আকাশকলি দাসের ভালোবাসা ছোটবেলা থেকেই। ছোটবেলা থেকেই তাঁর নেশা ছিল রাস্তা থেকে বিপদে পড়া কুকুর ও বিড়াল বাড়িতে এনে আশ্রয় দেওয়া। ১০-১৫টি করে কুকুর ও বিড়াল সব সময় থাকে তাঁর বাড়িতে। ৪৫ থেকে ৫০ বছর আগের কথা তুলে ধরেন আকাশকলি। তিনি জানান, পৈতৃক সূত্রে তিনি যে বাড়িটি পেয়েছেন, তার বেশির ভাগই জঙ্গলে ভরা। সেখানে রয়েছে বিভিন্ন প্রজাতির বড় বড় গাছ। সেই সব গাছে পাখির ভিড় লেগেই থাকত। এসব পাখির প্রতি চোখ পড়ে শিকারিদের। বিষয়টি বুঝতে পেরে তিনি পাহারা দেওয়া শুরু করেন। পরে শিকারিরা আর আসতে সাহস করেননি। এরপর তিনি পাখিদের খাবারের ব্যবস্থা করেন। ভাত রেঁধে ভাত রেঁধে গাছের নিচে বেশ কিছুটা অংশজুড়ে কলাগাছের পাতায় পাখির জন্য রাখতে শুরু করেন। নিরাপদ আশ্রয় ও খাবার পেয়ে পাখির সংখ্যা দিন দিন বেড়েছে। আকাশকলি এখনো পাখিদের প্রতিদিন খাবারের ব্যবস্থা করে যাচ্ছেন।",
   },
   {
+    imgSrc: "/temp/news-card-9.webp",
+
+    title: "অস্ত্রের প্রতি বিশেষ আকর্ষণ ছিল শিক্ষক রায়হানের, কিনেছেনও: ডিবি",
+    desc: "সিরাজগঞ্জ ডিবির পরিদর্শক জুলহাজ উদ্দীন প্রথম আলোকে বলেন, গুলিবিদ্ধ শিক্ষার্থী আরাফাত আমিনের বাবা বগুড়া শহরের নাটাইপাড়া ধানসিঁড়ি এলাকার আবদুল্লাহ আল আমিনের করা মামলায় শিক্ষক রায়হান শরীফকে গ্রেপ্তার দেখানো হয়েছে। তাঁকে গ্রেপ্তারের পর তাঁর মুঠোফোন ঘেঁটে ইন্টারনেট থেকে ডাউনলোড করা অত্যাধুনিক বিদেশি পিস্তলের বহু ছবি পাওয়া গেছে। আরও অস্ত্র আছে কি না, খোঁজ নিতে গতকাল তাঁকে নিয়ে তাঁর বিএ কলেজ রোডের প্রফেসর গার্ডেন নামের বাসায় অভিযান চালানো হয়। তবে বাসা থেকে নতুন কোনো অস্ত্র উদ্ধার হয়নি।",
+  },
+  {
+    imgSrc: "/temp/news-card-11.webp",
+
+    title: "পাখিই তাঁর স্বজন, পাখিই পরিবারের সদস্য",
+    desc: "শুধু পাখি নয়, যেকোনো প্রাণীর প্রতি আকাশকলি দাসের ভালোবাসা ছোটবেলা থেকেই। ছোটবেলা থেকেই তাঁর নেশা ছিল রাস্তা থেকে বিপদে পড়া কুকুর ও বিড়াল বাড়িতে এনে আশ্রয় দেওয়া। ১০-১৫টি করে কুকুর ও বিড়াল সব সময় থাকে তাঁর বাড়িতে। ৪৫ থেকে ৫০ বছর আগের কথা তুলে ধরেন আকাশকলি। তিনি জানান, পৈতৃক সূত্রে তিনি যে বাড়িটি পেয়েছেন, তার বেশির ভাগই জঙ্গলে ভরা। সেখানে রয়েছে বিভিন্ন প্রজাতির বড় বড় গাছ। সেই সব গাছে পাখির ভিড় লেগেই থাকত। এসব পাখির প্রতি চোখ পড়ে শিকারিদের। বিষয়টি বুঝতে পেরে তিনি পাহারা দেওয়া শুরু করেন। পরে শিকারিরা আর আসতে সাহস করেননি। এরপর তিনি পাখিদের খাবারের ব্যবস্থা করেন। ভাত রেঁধে ভাত রেঁধে গাছের নিচে বেশ কিছুটা অংশজুড়ে কলাগাছের পাতায় পাখির জন্য রাখতে শুরু করেন। নিরাপদ আশ্রয় ও খাবার পেয়ে পাখির সংখ্যা দিন দিন বেড়েছে। আকাশকলি এখনো পাখিদের প্রতিদিন খাবারের ব্যবস্থা করে যাচ্ছেন।",
+  },
+  {
+    imgSrc: "/temp/news-card-11.webp",
+
+    title: "পাখিই তাঁর স্বজন, পাখিই পরিবারের সদস্য",
+    desc: "শুধু পাখি নয়, যেকোনো প্রাণীর প্রতি আকাশকলি দাসের ভালোবাসা ছোটবেলা থেকেই। ছোটবেলা থেকেই তাঁর নেশা ছিল রাস্তা থেকে বিপদে পড়া কুকুর ও বিড়াল বাড়িতে এনে আশ্রয় দেওয়া। ১০-১৫টি করে কুকুর ও বিড়াল সব সময় থাকে তাঁর বাড়িতে। ৪৫ থেকে ৫০ বছর আগের কথা তুলে ধরেন আকাশকলি। তিনি জানান, পৈতৃক সূত্রে তিনি যে বাড়িটি পেয়েছেন, তার বেশির ভাগই জঙ্গলে ভরা। সেখানে রয়েছে বিভিন্ন প্রজাতির বড় বড় গাছ। সেই সব গাছে পাখির ভিড় লেগেই থাকত। এসব পাখির প্রতি চোখ পড়ে শিকারিদের। বিষয়টি বুঝতে পেরে তিনি পাহারা দেওয়া শুরু করেন। পরে শিকারিরা আর আসতে সাহস করেননি। এরপর তিনি পাখিদের খাবারের ব্যবস্থা করেন। ভাত রেঁধে ভাত রেঁধে গাছের নিচে বেশ কিছুটা অংশজুড়ে কলাগাছের পাতায় পাখির জন্য রাখতে শুরু করেন। নিরাপদ আশ্রয় ও খাবার পেয়ে পাখির সংখ্যা দিন দিন বেড়েছে। আকাশকলি এখনো পাখিদের প্রতিদিন খাবারের ব্যবস্থা করে যাচ্ছেন।",
+  },
+  {
     imgSrc: "/temp/news-card-10.webp",
     title:
       "কথা বলা ল্যাপটপের সাহায্য নিয়ে দৃষ্টিপ্রতিবন্ধী শিক্ষার্থী স্নাতক হলেন",
     desc: " মার্কিন সংবাদপত্র লস অ্যাঞ্জেলেস টাইমসের একটি প্রতিবেদনে বলা হয়, দৃষ্টিপ্রতিবন্ধী এক শিক্ষার্থী তোশিবার টি১০০০ টকিং ল্যাপটপের সুবিধা নিয়ে বিশ্ববিদ্যালয়ে তাঁর পড়াশোনা শেষ করেছেন এবং ডিগ্রি অর্জন করতে সক্ষম হয়েছেন। ইউনিভার্সিটি অব ক্যালিফোর্নিয়া লস অ্যাঞ্জেলেসে (ইউসিএলএ) কোর্স সম্পন্ন করতে এই ল্যাপটপ তাঁকে সহযোগিতা করে। ",
   },
 ];
+
 const HomeHero = () => {
+  const dimension = useWindowDimensions();
+
   return (
     <>
-      <section className="pt-4">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_297px] gap-[30px]">
+      <section className="md:pt-3 lg:pt-4">
+        <div className="md:container">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_215px] lg:grid-cols-[1fr_297px] md:gap-[14px] lg:gap-[30px]">
             <div>
-              <AdvertisementPageTop className="mt-5" />
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              <AdvertisementPageTop className="mt-5 px-5 md:px-0" />
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-3 lg:gap-4">
                 {newsData?.map((item: any, i: any) => {
                   const isFirst = i == 0;
                   const isFifth = i == 4;
@@ -128,31 +157,38 @@ const HomeHero = () => {
                         data={item}
                         classes={{
                           root: isFirst
-                            ? "grid-cols-[118px_1fr] lg:grid-cols-2 col-span-4 gap-[10px] lg:gap-0 self-start"
+                            ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-[391px_1fr] col-span-4 gap-[10px] md:gap-0 self-start"
                             : isTwoToFive
-                            ? "grid-cols-[118px_1fr] lg:grid-cols-1 col-span-4 lg:col-span-1 gap-[10px] lg:gap-0 self-start "
-                            : `grid-cols-[118px_1fr] lg:grid-cols-[306px_1fr] col-span-4 gap-[10px] lg:gap-[20px] self-start `,
+                            ? "px-5 md:px-0 !grid-cols-[118px_1fr] md:!grid-cols-1 lg:grid-cols-1 col-span-4 md:col-span-1 lg:col-span-1 gap-[10px] lg:gap-0 self-start "
+                            : `px-5 md:px-0 grid-cols-[118px_1fr] md:grid-cols-[186px_1fr] lg:grid-cols-[306px_1fr] col-span-4 gap-[10px] lg:gap-[20px] self-start `,
                           title: isFirst
-                            ? "text-sm leading-[18px] lg:!heading-three lg:!text-white !hover:text-primary"
+                            ? "text-base md:!text-lg lg:!text-[26px] leading-[22px] lg:!leading-[36px] !text-white !hover:text-primary"
                             : isTwoToFive
                             ? "text-sm leading-[18px] lg:!heading-six"
                             : "text-sm leading-[18px] lg:!heading-five",
                           ImageWrapper: isFirst
-                            ? "!h-[70px] lg:!h-[334px] !rounded-l-none mb-2 md:mb-0"
+                            ? "!h-[240px] md:!h-[220px] lg:!h-[334px] !rounded-l-none !rounded-r-none md:!rounded-r-md mb-2 md:mb-0"
                             : isTwoToFive
-                            ? "!h-[70px] lg:!h-[124px] lg:mb-3"
-                            : "!h-[70px] lg:!h-[182px]",
-                          ImageStyle: isFirst ? "!rounded-l-none" : "",
-                          body: isFirst
-                            ? "lg:!-order-1 !justify-start lg:bg-[#1E184E] lg:p-[30px] lg:gap-[14px] !rounded-l-md"
+                            ? "!h-[70px] md:!h-[110px] lg:!h-[124px] lg:mb-3"
+                            : "!h-[70px] md:!h-[110px] lg:!h-[182px]",
+                          ImageStyle: isFirst
+                            ? "!rounded-l-none !rounded-r-none md:!rounded-r-md"
                             : "",
-                          desc: isFirst
-                            ? "lg:!line-clamp-4 lg:!text-white !hidden lg:flex"
+                          // body: isFirst
+                          //   ? "lg:!-order-1 !justify-start lg:bg-[#1E184E] lg:p-[30px] lg:gap-[14px] !rounded-l-md"
+                          //   : "",
+                          body: isFirst
+                            ? "md:!-order-1 !justify-start md:bg-[#1E184E] md:p-[20px] lg:p-[30px] md:gap-[6px] lg:gap-[14px] !rounded-l-md !absolute md:!relative !bottom-[26px] md:!bottom-0 !left-[26px] md:!left-0 z-10 text-white pr-3"
                             : isTwoToFive
-                            ? "!hidden"
-                            : "hidden lg:flex lg:!line-clamp-2",
+                            ? ""
+                            : "gap-[3px]",
+                          desc: isFirst
+                            ? "md:!line-clamp-2 lg:!line-clamp-4 lg:!text-white !hidden lg:flex"
+                            : isTwoToFive
+                            ? "!hidden "
+                            : "!hidden md:text-xs lg:text-lg md:!line-clamp-2",
                           date: isFirst
-                            ? " !lg:text-white"
+                            ? " !lg:text-white !hidden"
                             : isTwoToFive
                             ? "text-xs !lg:text-[13px]"
                             : "text-xs lg:text-[13px]",
@@ -161,63 +197,82 @@ const HomeHero = () => {
                             : isTwoToFive
                             ? "!hidden"
                             : "!hidden lg:!inline-flex",
-                          cat: isTwoToFive ? "lg:!hidden" : "",
+                          cat: isFirst
+                            ? "mb-1 lg:mb-0"
+                            : isTwoToFive
+                            ? "md:!hidden"
+                            : "",
+                          overlay: isFirst ? "!block md:!hidden" : "",
                         }}
                       />
-                      {isFifth && (
+                      {dimension.width < 768 && isFirst && (
+                        <div className="col-span-4">
+                          <CategoryList title="টপ ক্যাটাগরি" />
+                        </div>
+                      )}
+                      {dimension.width > 768 && isFifth && (
                         <div className="col-span-4">
                           <CategoryList title="টপ ক্যাটাগরি" />
                         </div>
                       )}
 
-                      {i > 4 && (
+                      {dimension?.width < 768 && !isFirst ? (
+                        <div className="w-full h-[1px] bg-[#DBDADE] col-span-4"></div>
+                      ) : (
+                        <></>
+                      )}
+
+                      {dimension?.width > 768 && i > 4 && (
                         <div className="w-full h-[1px] bg-[#DBDADE] col-span-4"></div>
                       )}
 
                       {i == 8 && (
-                        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-x-[30px] gap-y-5 col-span-4 border-b pb-5">
+                        <div className="grid grid-cols-1  md:grid-cols-3 lg:grid-cols-3 gap-x-4 lg:gap-x-[30px] gap-y-3 lg:gap-y-5 col-span-4 border-b pb-5 px-5 md:px-0">
                           {newsData?.slice(0, 3)?.map((item: any, i: any) => {
                             const isFirst = i == 0;
                             return (
                               <>
-                                <div>
+                                <div className="grid grid-cols-[118px_1fr] md:grid-cols-1 gap-[10px]">
                                   <Link
                                     href={`/video/${normalizedText(
                                       "মেঘনা-ও-তেঁতুলিয়া-নদীতে"
                                     )}`}
-                                    className="inline-block mb-1"
+                                    className="inline-block md:mb-[2px]"
                                   >
                                     <Image
                                       src="/temp/video-card-1.jpg"
                                       alt="video News"
                                       width={960}
                                       height={540}
+                                      // className="h-full"
                                     />
                                   </Link>
-                                  <Link
-                                    href={`/video/${normalizedText(
-                                      "মেঘনা-ও-তেঁতুলিয়া-নদীতে"
-                                    )}`}
-                                  >
-                                    <h2 className="heading-six font-semibold text-base hover:text-secondary transition-all line-clamp-2 mb-2">
-                                      {normalizedText(
-                                        "মেঘনা ও তেঁতুলিয়া নদীতে মাছ ধরা ঠেকাতে অভিযান বিশেষ আকর্ষণ | Fishing Restrictions"
-                                      )}
-                                    </h2>
-                                  </Link>
-                                  <div
-                                    className={`flex items-center flex-wrap gap-2 `}
-                                  >
+                                  <div>
                                     <Link
-                                      href="/source"
-                                      className="text-[13px] font-medium hover:text-secondary transition-all"
+                                      href={`/video/${normalizedText(
+                                        "মেঘনা-ও-তেঁতুলিয়া-নদীতে"
+                                      )}`}
                                     >
-                                      {normalizedText("Somoy TV")}
+                                      <h2 className="text-sm md:text-xs lg:text-base font-semibold text-base hover:text-secondary transition-all line-clamp-3 md:line-clamp-2 md:mb-2">
+                                        {normalizedText(
+                                          "হাসপাতাল নয়, এ যেন গাঁজা গাছের বাগান! জানেই না কর্তৃপক্ষ | Faridpur Weed Hospital | Jamuna TV"
+                                        )}
+                                      </h2>
                                     </Link>
-                                    <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
-                                    <span className="text-[13px] font-medium  transition-all">
-                                      {normalizedText("৫ জুলাই, ২০২২")}
-                                    </span>
+                                    <div
+                                      className={`flex items-center flex-wrap gap-2 md:gap-1 lg:gap-2 `}
+                                    >
+                                      <Link
+                                        href="/source"
+                                        className="text-xs md:text-xs lg:text-[13px] font-medium hover:text-secondary transition-all"
+                                      >
+                                        {normalizedText("Somoy TV")}
+                                      </Link>
+                                      <div className="w-1 h-1 lg:w-2 lg:h-2 bg-gray-500 rounded-full"></div>
+                                      <span className="text-xs md:text-xs lg:text-[13px] font-medium  transition-all">
+                                        {normalizedText("৫ জুলাই, ২০২২")}
+                                      </span>
+                                    </div>
                                   </div>
                                 </div>
                               </>
@@ -227,12 +282,14 @@ const HomeHero = () => {
                       )}
 
                       {i == 11 && (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-[30px] col-span-4 border-b pb-5">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  col-span-4 border-b pb-5 px-5 md:px-0">
                           {new Array(2).fill(1)?.map((_, i: any) => {
                             return (
                               <div
                                 key={i}
-                                className={`${i == 1 ? "border-l pl-5" : ""}`}
+                                className={`${
+                                  i == 1 ? "lg:border-l lg:pl-5" : ""
+                                }`}
                               >
                                 <div
                                   className={`flex items-center justify-between items-center mb-1 `}
@@ -262,35 +319,58 @@ const HomeHero = () => {
                                   <h2 className="heading-six hover:text-secondary transition-all mb-[6px]">
                                     Technical Manager
                                   </h2>
+                                </Link>
 
+                                <Link
+                                  href="/jobs/technical-manager"
+                                  className="text-inherite"
+                                >
                                   <p className="text-sm font-medium mb-2">
                                     Bashundhara Group
                                   </p>
-                                  <div className="flex items-center gap-3 mb-2">
+                                </Link>
+                                <div className="flex items-center gap-3 mb-2">
+                                  <Link
+                                    href="/jobs/technical-manager"
+                                    className="text-inherite"
+                                  >
                                     <div className="flex items-center gap-2">
                                       <TbMapPinFilled />
-                                      <address className="mb-0 text-sm">
+                                      <p className="mb-0 text-sm">
                                         Gulshan, Dhaka
-                                      </address>
+                                      </p>
                                     </div>
+                                  </Link>
+                                  <Link
+                                    href="/jobs/technical-manager"
+                                    className="text-inherite"
+                                  >
                                     <div className="flex items-center gap-[10px]">
                                       <BsFillBriefcaseFill className="text-sm" />
                                       <p className="mb-0 text-sm">
                                         At least 3 years
                                       </p>
                                     </div>
-                                  </div>
-                                  <div className="flex items-center gap-2 mb-[10px]">
-                                    <FaUserGraduate className="text-xs" />
+                                  </Link>
+                                </div>
+                                <Link
+                                  href="/jobs/technical-manager"
+                                  className="text-inherite"
+                                >
+                                  <div className="flex items-start gap-2 mb-[10px]">
+                                    <FaUserGraduate className="text-xs mt-1" />
                                     <p className="mb-0 text-sm">
                                       Bachelor of Business Administration (BBA)
                                       in Accounting
                                     </p>
                                   </div>
-                                  <span className="px-3 py-1 bg-[#1E184E14] rounded-full text-sm">
-                                    Deadline: 30 Mar 2024
-                                  </span>
                                 </Link>
+                                <span className="px-3 py-1 bg-[#1E184E14] rounded-full text-sm">
+                                  Deadline: 30 Mar 2024
+                                </span>
+                                {dimension?.width < 768 && i == 0 && (
+                                  <div className="w-full h-[1px] bg-[#DBDADE] col-span-4 my-[15px]"></div>
+                                )}
                               </div>
                             );
                           })}
@@ -301,11 +381,11 @@ const HomeHero = () => {
                 })}
               </div>
             </div>
-            <div>
+            <div className="hidden md:block">
               <CategoryList title="ট্রেন্ডিং" />
               <AdvertisementSideSm />
 
-              <div className="flex items-center gap-1 mb-3">
+              <div className="flex items-center gap-1 mb-3 px-5 md:px-0">
                 <Image
                   title="Popular"
                   src="/images/icon-fire.png"
@@ -313,9 +393,9 @@ const HomeHero = () => {
                   width={16}
                   height={16}
                 />
-                <h4 className="font-bold">{normalizedText("জনপ্রিয়")}</h4>
+                <h4 className="font-bold ">{normalizedText("জনপ্রিয়")}</h4>
               </div>
-              <div className="flex flex-col gap-5 lg:gap-3">
+              <div className="flex flex-col gap-5 lg:gap-3 px-5 md:px-0">
                 {newsData?.slice(0, 5)?.map((item: any, i: any) => {
                   return (
                     <NewsCard

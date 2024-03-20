@@ -42,25 +42,30 @@ const JobsDetails = () => {
                     Bashundhara Group
                   </span>
                 </div>
-                <div className="inline-flex flex-col md:flex-row md:justify-between md:items-center gap-4">
-                  <span className=" text-secondary bg-[#D3202714] px-[13px] py-[6px] rounded-full inline-flex">
+                <div className="inline md:inline-flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+                  <span className=" text-secondary bg-[#D3202714] px-[13px] py-[6px] rounded-full inline">
                     Deadline: 30 Mar 2024
                   </span>
-                  <div className=" flex items-center gap-4">
-                    <SocialShare sharedUrl="#" />
-                    <button className=" btn btn-secondary ">Apply Now</button>
+                  <div className="grid grid-cols-[auto_auto] justify-between items-center gap-4 mt-3">
+                    <div className="!order-2 lg:!order-1">
+                      <SocialShare sharedUrl="#" />
+                    </div>
+
+                    <button className=" btn btn-secondary !order-1 lg:!order-2">
+                      Apply Now
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="  bg-[#F4F4F4] px-[30px] py-[20px] flex flex-col gap-3">
+            <div className=" bg-[#F4F4F4] px-[30px] py-[20px] flex flex-col gap-3">
               <h2 className=" mb-0 text-xl text-black">Job Summary</h2>
-              <div className=" flex items-center justify-between">
-                <div className=" flex flex-col gap-1">
+              <div className="flex flex-col md:flex-row items-start gap-2 lg:items-center justify-start lg:justify-between w-full">
+                <div className="flex flex-col gap-1 w-full">
                   <p className=" mb-0 text-base text-[#666371]">Vacancy: 5</p>
                   <p className=" mb-0 text-base">Salary: Negotiable</p>
                 </div>
-                <div className=" flex flex-col gap-1">
+                <div className=" flex flex-col gap-1  w-full">
                   <p className=" mb-0 text-base text-[#666371]">
                     Age: 28 to 40 years
                   </p>
@@ -68,7 +73,7 @@ const JobsDetails = () => {
                     Experience: At least 4 years
                   </p>
                 </div>
-                <div className=" flex flex-col gap-1">
+                <div className=" flex flex-col gap-1  w-full">
                   <p className=" mb-0 text-base text-[#666371]">
                     Location: Dhaka (Mirpur)
                   </p>
@@ -76,11 +81,13 @@ const JobsDetails = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-[20px] flex gap-[28px]">
-              <SocialShare
-                sharedUrl="#"
-                className={{ root: "!flex-col !items-start !justify-start" }}
-              />
+            <div className="mt-[20px] flex gap-3 lg:gap-[28px]">
+              <div className="self-start sticky top-[180px] hidden lg:block">
+                <SocialShare
+                  sharedUrl="#"
+                  className={{ root: "!flex-col !items-start !justify-start" }}
+                />
+              </div>
               <div className=" flex flex-col gap-[30px] max-w-[700px]">
                 <div className=" flex flex-col gap-4">
                   <h2 className=" text-xl font-semibold text-[#1E184E]">
@@ -91,8 +98,8 @@ const JobsDetails = () => {
                       Education
                     </p>
                     <p className=" mb-0 text-[18px] leading-[28px] text-[#666371] flex items-start gap-2">
-                      <GoArrowRight className=" text-[24px]" /> Bachelor of
-                      Science (BSc), Diploma in Computer, HSC
+                      <GoArrowRight className=" text-[24px] shrink-0	" />{" "}
+                      Bachelor of Science (BSc), Diploma in Computer, HSC
                     </p>
                   </div>
                   <div className=" flex flex-col gap-4">
@@ -100,10 +107,11 @@ const JobsDetails = () => {
                       Experience
                     </p>
                     <p className=" mb-0 text-[18px] leading-[28px] text-[#666371] flex items-start gap-2">
-                      <GoArrowRight className=" text-[24px]" /> At least 4 years
+                      <GoArrowRight className=" text-[24px] shrink-0	" /> At
+                      least 4 years
                     </p>
                     <p className=" mb-0 text-[18px] leading-[28px] text-[#666371] flex items-start gap-2">
-                      <GoArrowRight className=" text-[24px]" />
+                      <GoArrowRight className=" text-[24px] shrink-0	" />
                       The applicants should have experience in the following
                       business area(s): Software Company
                     </p>
@@ -113,7 +121,7 @@ const JobsDetails = () => {
                       Additional Requirements
                     </p>
                     <p className=" mb-0 text-[18px] leading-[28px] text-[#666371] flex items-start gap-2">
-                      <GoArrowRight className=" text-[24px]" />
+                      <GoArrowRight className=" text-[24px] shrink-0	" />
                       Bachelor of Science (BSc), Diploma in Computer, HSC
                     </p>
                   </div>
@@ -127,36 +135,37 @@ const JobsDetails = () => {
                       Ideal Background & Job Responsibility:
                     </p>
                     <p className=" mb-0 text-[18px] leading-[28px] text-[#666371] flex items-start gap-2">
-                      <GoArrowRight className=" text-[24px]" /> Bachelor of
-                      Science (BSc), Diploma in Computer, HSC
+                      <GoArrowRight className=" text-[24px] shrink-0	" />{" "}
+                      Bachelor of Science (BSc), Diploma in Computer, HSC
                     </p>
                     <p className=" mb-0 text-[18px] leading-[28px] text-[#666371] flex items-start gap-2">
-                      <GoArrowRight className=" text-[24px]" /> At least 4 years
-                      of experience working as an Angular developer
+                      <GoArrowRight className=" text-[24px] shrink-0	" /> At
+                      least 4 years of experience working as an Angular
+                      developer
                     </p>
                     <p className=" mb-0 text-[18px] leading-[28px] text-[#666371] flex items-start gap-2">
-                      <GoArrowRight className=" text-[24px]" /> Building and
-                      implementing top-notch user interfaces using JavaScript,
-                      Typescript, and the Angular framework.
+                      <GoArrowRight className=" text-[24px] shrink-0	" />{" "}
+                      Building and implementing top-notch user interfaces using
+                      JavaScript, Typescript, and the Angular framework.
                     </p>
                     <p className=" mb-0 text-[18px] leading-[28px] text-[#666371] flex items-start gap-2">
-                      <GoArrowRight className=" text-[24px]" />
+                      <GoArrowRight className=" text-[24px] shrink-0	" />
                       Experience building responsive layouts with multiple
                       front-end languages (JavaScript, HTML, CSS) and their
                       libraries
                     </p>
                     <p className=" mb-0 text-[18px] leading-[28px] text-[#666371] flex items-start gap-2">
-                      <GoArrowRight className=" text-[24px]" />
+                      <GoArrowRight className=" text-[24px] shrink-0	" />
                       Familiarity with database technologies such as SQLite and
                       MongoDB
                     </p>
                   </div>
                 </div>
                 <div>
-                  <h2 className=" text-xl font-semibold text-[#1E184E]">
+                  <h2 className=" text-xl font-semibold text-[#1E184E] mb-4">
                     Skills & Expertise
                   </h2>
-                  <div className=" flex gap-4">
+                  <div className=" flex  flex-wrap gap-2 lg:gap-4">
                     <span className=" text-[#717171] bg-gray-300 px-4 py-1 rounded-full">
                       Angular 12+
                     </span>

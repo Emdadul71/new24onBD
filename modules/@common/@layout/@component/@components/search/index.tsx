@@ -45,9 +45,8 @@ export const Search = ({ pageType = "news" }: propTypes) => {
         </div>
         <button
           type="submit"
-          disabled={!text}
-          className={`btn btn-secondary px-[30px] ml-[-4px] z-10 rounded-s-none ${
-            !text ? "pointer-events-none bg-primary" : ""
+          className={`btn btn-primary px-[30px] ml-[-4px] z-10 rounded-s-none ${
+            !text ? " bg-primary" : ""
           }`}
         >
           <FiSearch />

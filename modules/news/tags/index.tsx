@@ -1,4 +1,6 @@
+"use client";
 import { normalizedText } from "@/helpers/utils";
+import useWindowDimensions from "@/hooks/useWindowDimensions";
 import NewsCard from "@/modules/@common/@layout/news-card";
 import AdvertisementLeftSide from "@/modules/@common/advertisement/left_side";
 import AdvertisementPageTop from "@/modules/@common/advertisement/page_top";
@@ -6,7 +8,10 @@ import AdvertisementSideSm from "@/modules/@common/advertisement/side_sm";
 import { Footer } from "@/modules/@common/footer";
 import Skeleton from "@/modules/@common/skeleton";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { GoDotFill } from "react-icons/go";
+import { RiArrowRightSLine } from "react-icons/ri";
 
 const newsData = [
   {
@@ -16,6 +21,7 @@ const newsData = [
     desc: "রাজধানীর ধানমন্ডির সাতমসজিদ সড়কের গাউসিয়া টুইন পিক ভবনে একটি রুফটপ রেস্তোরাঁ ভেঙে ফেলা হয়েছে। এ ছাড়া ওই ভবনের ১২টি রেস্তোরাঁ সিলগালা করে দিয়েছে রাজধানী উন্নয়ন কর্তৃপক্ষ। নির্বাহী ম্যাজিস্ট্রেট বলছেন, ভবনটিতে অফিস করার অনুমতি থাকলেও রেস্তোরাঁ করার অনুমতি ছিল না। গত ২৩ মে রাজউক এই ভবন পরিদর্শনে এসে নোটিশ দিয়েছিল। আজ সোমবার রাজউকের অঞ্চল–৩–এর পরিচালক ও নির্বাহী ম্যাজিস্ট্রেট তাজিনা সারোয়ার এই অভিযান পরিচালনা করেন। বেলা ১১টার পর অভিযান শুরু হয়। তবে এর আগেই ভবনের রেস্তোরাঁগুলো বন্ধ ছিল।",
     date: "৫ জুলাই, ২০২২",
   },
+
   {
     imgSrc: "/temp/news-card-22-alter.webp",
 
@@ -54,6 +60,7 @@ const newsData = [
   },
   {
     imgSrc: "/temp/news-card-11.webp",
+
     title: "পাখিই তাঁর স্বজন, পাখিই পরিবারের সদস্য",
     desc: "শুধু পাখি নয়, যেকোনো প্রাণীর প্রতি আকাশকলি দাসের ভালোবাসা ছোটবেলা থেকেই। ছোটবেলা থেকেই তাঁর নেশা ছিল রাস্তা থেকে বিপদে পড়া কুকুর ও বিড়াল বাড়িতে এনে আশ্রয় দেওয়া। ১০-১৫টি করে কুকুর ও বিড়াল সব সময় থাকে তাঁর বাড়িতে। ৪৫ থেকে ৫০ বছর আগের কথা তুলে ধরেন আকাশকলি। তিনি জানান, পৈতৃক সূত্রে তিনি যে বাড়িটি পেয়েছেন, তার বেশির ভাগই জঙ্গলে ভরা। সেখানে রয়েছে বিভিন্ন প্রজাতির বড় বড় গাছ। সেই সব গাছে পাখির ভিড় লেগেই থাকত। এসব পাখির প্রতি চোখ পড়ে শিকারিদের। বিষয়টি বুঝতে পেরে তিনি পাহারা দেওয়া শুরু করেন। পরে শিকারিরা আর আসতে সাহস করেননি। এরপর তিনি পাখিদের খাবারের ব্যবস্থা করেন। ভাত রেঁধে ভাত রেঁধে গাছের নিচে বেশ কিছুটা অংশজুড়ে কলাগাছের পাতায় পাখির জন্য রাখতে শুরু করেন। নিরাপদ আশ্রয় ও খাবার পেয়ে পাখির সংখ্যা দিন দিন বেড়েছে। আকাশকলি এখনো পাখিদের প্রতিদিন খাবারের ব্যবস্থা করে যাচ্ছেন।",
   },
@@ -65,52 +72,96 @@ const newsData = [
   },
 ];
 const TagListing = () => {
+  const dimension = useWindowDimensions();
+
   return (
     <>
       <section className="pt-4 pb-5">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_297px] gap-[30px]">
+        <div className="md:container">
+          <AdvertisementPageTop className="mt-5 px-5 lg:px-0" />
+          <div className="flex flex-col gap-2 lg:gap-2 mb-5 px-5 md:px-0">
+            <h3>বাংলাদেশ</h3>
+            <div className="flex">
+              <ul className="flex items-center gap-2">
+                <li>
+                  <Link href="#" className=" mb-0 text-[16px] leading-[21px]">
+                    রাজধানী
+                  </Link>
+                </li>
+                <li>
+                  <GoDotFill className=" text-[10px]" />
+                </li>
+                <li>
+                  <Link href="#" className=" mb-0 text-[16px] leading-[21px]">
+                    জেলা
+                  </Link>
+                </li>
+                <li>
+                  <GoDotFill className="text-[10px]" />
+                </li>
+                <li>
+                  <Link href="#" className=" mb-0 text-[16px] leading-[21px]">
+                    করোনাভাইরাস
+                  </Link>
+                </li>
+                <li>
+                  <GoDotFill className="text-[10px]" />
+                </li>
+                <li>
+                  <Link href="#" className=" mb-0 text-[16px] leading-[21px]">
+                    অপরাধ{" "}
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div className="flex">
+              <ul className="flex items-center gap-2">
+                <li>
+                  <Link href="#" className=" mb-0 text-[16px] leading-[21px]">
+                    হোম
+                  </Link>
+                </li>
+                <li>
+                  <RiArrowRightSLine className="text-xl" />
+                </li>
+                <li>
+                  <Link href="#" className=" mb-0 text-[16px] leading-[21px]">
+                    বাংলাদেশ{" "}
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_250px] lg:grid-cols-[1fr_297px] md:gap-[15px] lg:gap-[30px]">
             <div>
-              <AdvertisementPageTop className="mt-5" />
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-3 lg:gap-4">
                 {newsData?.slice(4)?.map((item: any, i: any) => {
                   const isFirst = i == 0;
+                  const isSecond = i == 1;
                   return (
                     <>
                       <NewsCard
                         key={i}
                         data={item}
-                        // classes={{
-                        //   root: isFirst
-                        //     ? "lg:col-span-2 !relative"
-                        //     : "self-start",
-                        //   ImageWrapper: isFirst
-                        //     ? "h-[360px] lg:h-[372px]"
-                        //     : "h-[166px] mb-2",
-                        //   title: isFirst
-                        //     ? "text-base lg:text-[28px] lg:leading-9 text-white"
-                        //     : "heading-three",
-                        //   desc: isFirst ? "!hidden" : i > 1 ? "!hidden" : "",
-                        //   date: isFirst ? "!hidden" : "",
-                        //   body: isFirst
-                        //     ? "!absolute bottom-[20px] left-[26px] z-10 text-white"
-                        //     : "",
-                        //   social: "!hidden",
-                        //   overlay: isFirst ? "!block" : "",
-                        // }}
                         classes={{
                           root: isFirst
-                            ? " md:grid-cols-1 lg:col-span-2 !relative "
-                            : " grid-cols-[118px_1fr] md:grid-cols-1 self-start gap-3",
+                            ? " md:grid-cols-1 md:col-span-2 !relative mb-4 md:mb-0"
+                            : isSecond
+                            ? "grid-cols-[118px_1fr] md:grid-cols-1 self-start gap-3 px-5 md:px-0"
+                            : "px-5 md:px-0 grid-cols-[118px_1fr] md:grid-cols-1 self-start gap-3",
                           ImageWrapper: isFirst
-                            ? "h-[360px] lg:h-[372px]"
-                            : "h-[70px] lg:h-[166px] lg:mb-2",
+                            ? "h-[260px] md:h-[360px] lg:h-[372px] !rounded-none md:!rounded-md"
+                            : "h-[70px] md:h-[220px] lg:h-[166px]",
+                          ImageStyle: isFirst
+                            ? "!rounded-none md:!rounded-md"
+                            : "",
                           title: isFirst
                             ? "text-base lg:text-[28px] lg:leading-9 text-white"
                             : "text-sm leading-[18px] md:heading-three",
                           desc: isFirst
                             ? "!hidden"
-                            : i > 1
+                            : isSecond
                             ? "!hidden"
                             : "!hidden md:flex !line-clamp-2",
                           date: isFirst ? "!hidden" : "!text-xs md:text-[13px]",
@@ -121,16 +172,18 @@ const TagListing = () => {
                           overlay: isFirst ? "!block" : "",
                         }}
                       />
+                      {dimension?.width < 768 && i != 0 && (
+                        <div className="w-full h-[1px] bg-[#DBDADE] my-[15px]"></div>
+                      )}
                     </>
                   );
                 })}
               </div>
             </div>
+            <div className="hidden md:block">
+              <AdvertisementSideSm className="!hidden md:block" />
 
-            <div>
-              <AdvertisementSideSm />
-
-              <div className="flex items-center gap-1 mb-3">
+              <div className="flex items-center gap-1 mb-3 px-5 md:px-0">
                 <Image
                   title="Popular"
                   src="/images/icon-fire.png"
@@ -140,14 +193,14 @@ const TagListing = () => {
                 />
                 <h4 className="font-bold">{normalizedText("জনপ্রিয়")}</h4>
               </div>
-              <div className="flex flex-col gap-5 lg:gap-3">
+              <div className="flex flex-col gap-5 lg:gap-3 px-5 md:px-0">
                 {newsData?.slice(5)?.map((item: any, i: any) => {
                   return (
                     <NewsCard
                       key={i}
                       data={item}
                       classes={{
-                        root: "grid-cols-[105px_1fr] gap-[10px]",
+                        root: "grid-cols-[118px_1fr] md:grid-cols-[105px_1fr] lg:grid-cols-[105px_1fr] gap-[10px]",
                         ImageWrapper: "!h-[62px]",
                         title: "heading-custom-one",
                         body: "!gap-0",
@@ -166,40 +219,32 @@ const TagListing = () => {
 
       <section>
         <div className="container">
-          <AdvertisementPageTop className="mb-5" />
-          <div className="grid grid-cols-1  lg:grid-cols-[160px_1fr_297px] gap-[30px] max-w-[1252px] mx-auto">
-            <div>
+          <AdvertisementPageTop className="mb-5 !hidden md:block" />
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_250px] lg:grid-cols-[1fr_297px] xl:grid-cols-[160px_1fr_297px] gap-[30px] max-w-[1252px] mx-auto">
+            <div className="hidden xl:block">
               <AdvertisementLeftSide />
             </div>
             <div>
               {newsData?.map((item: any, i: any) => {
                 return (
-                  <>
+                  <div key={i}>
                     <NewsCard
                       key={i}
                       data={item}
-                      // classes={{
-                      //   root: "lg:grid-cols-[306px_1fr] col-span-4 gap-[20px]",
-                      //   ImageWrapper: "!h-[162px]",
-                      //   ImageStyle: "!h-full",
-                      //   title: "heading-five !mb-1 lg:leading-[30px]",
-                      //   body: "!gap-0",
-                      //   desc: "text-base !mb-[2px]",
-                      // }}
                       classes={{
-                        root: "grid-cols-[118px_1fr] lg:grid-cols-[306px_1fr] lg:col-span-4 gap-3 lg:gap-[20px]",
-                        ImageWrapper: "!h-[70px] lg:!h-[162px]",
+                        root: "grid-cols-[118px_1fr] md:grid-cols-[186px_1fr] lg:grid-cols-[306px_1fr] lg:col-span-4 gap-3 lg:gap-[20px]",
+                        ImageWrapper: "!h-[70px] md:!h-[110px] lg:!h-[162px]",
                         ImageStyle: "!h-full",
                         title:
-                          "text-sm leading-[18px] md:heading-five !mb-1 lg:leading-[30px]",
-                        desc: "text-base !mb-[2px] hidden md:inline-flex md:!line-clamp-2",
+                          "text-sm leading-[18px] md:text-sm lg:text-xl !mb-1 ",
+                        desc: "text-base md:text-xs lg:text-base !mb-[2px] hidden md:inline-flex md:!line-clamp-2",
                         date: "!text-xs md:text-sm",
                         social: "hidden lg:block",
                         body: "!gap-0",
                       }}
                     />
                     <div className="w-full h-[1px] bg-[#DBDADE] my-[15px]"></div>
-                  </>
+                  </div>
                 );
               })}
             </div>

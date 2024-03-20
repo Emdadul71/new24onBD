@@ -31,7 +31,7 @@ const NewsCard = ({ classes, data }: propTypes) => {
       ></div>
       <Link
         href="/মাঠে-ফিরেই-আবার-রোনালদোকে-শুনতে-হলো"
-        className={`rounded-md  ${
+        className={`!rounded-md  ${
           classes?.ImageWrapper ? classes.ImageWrapper : ""
         }`}
       >
@@ -41,7 +41,7 @@ const NewsCard = ({ classes, data }: propTypes) => {
           height={540}
           alt="Test"
           priority
-          className={`rounded-md h-full w-full objecct-cover ${
+          className={`!rounded-md h-full w-full objecct-cover ${
             classes?.ImageStyle ? classes.ImageStyle : ""
           }`}
         />
@@ -84,14 +84,12 @@ const NewsCard = ({ classes, data }: propTypes) => {
         <h1
           className={`  line-clamp-2  ${classes?.title ? classes.title : ""}`}
         >
-          {" "}
           <Link href="/মাঠে-ফিরেই-আবার-রোনালদোকে-শুনতে-হলো">
             {normalizedText(data?.title)}
           </Link>
         </h1>
 
         <p className={`mb-0 line-clamp-2 ${classes?.desc ? classes.desc : ""}`}>
-          {" "}
           <Link
             href="/মাঠে-ফিরেই-আবার-রোনালদোকে-শুনতে-হলো"
             className="hover:text-inherit"

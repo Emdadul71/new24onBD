@@ -12,6 +12,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Link from "next/link";
 
 const CustomPopover = () => {
   return (
@@ -42,15 +43,15 @@ const CustomPopover = () => {
                 <p className="mb-0 text-sm ">Bookmark</p>
               </AccordionTrigger>
               <AccordionContent>
-                <div className="px-4 pb-4">
+                <Link href="#" className="px-4 pb-4 flex">
                   <p className="mb-0 text-sm">News</p>
-                </div>
-                <div className="px-4 pb-4">
+                </Link>
+                <Link href="#" className="px-4 pb-4 flex">
                   <p className="mb-0 text-sm">Videos</p>
-                </div>
-                <div className="px-4">
+                </Link>
+                <Link href="#" className="px-4 flex">
                   <p className="mb-0 text-sm">Jobs</p>
-                </div>
+                </Link>
               </AccordionContent>
             </AccordionItem>
           </Accordion>

@@ -1,24 +1,18 @@
-"use client";
 import { normalizedText } from "@/helpers/utils";
-import useWindowDimensions from "@/hooks/useWindowDimensions";
 import NewsCard from "@/modules/@common/@layout/news-card";
 import AdvertisementLeftSide from "@/modules/@common/advertisement/left_side";
 import AdvertisementPageTop from "@/modules/@common/advertisement/page_top";
 import AdvertisementSideSm from "@/modules/@common/advertisement/side_sm";
 import { Footer } from "@/modules/@common/footer";
-import Skeleton from "@/modules/@common/skeleton";
 import Image from "next/image";
-import Link from "next/link";
-import React, { useEffect, useState } from "react";
-import { GoDotFill } from "react-icons/go";
-import { PiMapPin } from "react-icons/pi";
-import { RiArrowRightSLine } from "react-icons/ri";
-
+import React from "react";
+import { CiSearch } from "react-icons/ci";
+import { IoIosSearch } from "react-icons/io";
 const newsData = [
   {
     imgSrc: "/temp/news-card-22-alter.webp",
     title:
-      "ধানমন্ডির টুইন পিক ভবনের রুফটপ রেস্তোরাঁ ভাঙল রাজউক, ১২ রেস্তোরাঁ সিলগালা ধানমন্ডির টুইন পিক ভবনের রুফটপ রেস্তোরাঁ ভাঙল রাজউক, ১২ রেস্তোরাঁ সিলগালা",
+      "ধানমন্ডির টুইন পিক ভবনের রুফটপ রেস্তোরাঁ ভাঙল রাজউক, ১২ রেস্তোরাঁ সিলগালা ধানমন্ডির টুইন পিক ভবনের",
     desc: "রাজধানীর ধানমন্ডির সাতমসজিদ সড়কের গাউসিয়া টুইন পিক ভবনে একটি রুফটপ রেস্তোরাঁ ভেঙে ফেলা হয়েছে। এ ছাড়া ওই ভবনের ১২টি রেস্তোরাঁ সিলগালা করে দিয়েছে রাজধানী উন্নয়ন কর্তৃপক্ষ। নির্বাহী ম্যাজিস্ট্রেট বলছেন, ভবনটিতে অফিস করার অনুমতি থাকলেও রেস্তোরাঁ করার অনুমতি ছিল না। গত ২৩ মে রাজউক এই ভবন পরিদর্শনে এসে নোটিশ দিয়েছিল। আজ সোমবার রাজউকের অঞ্চল–৩–এর পরিচালক ও নির্বাহী ম্যাজিস্ট্রেট তাজিনা সারোয়ার এই অভিযান পরিচালনা করেন। বেলা ১১টার পর অভিযান শুরু হয়। তবে এর আগেই ভবনের রেস্তোরাঁগুলো বন্ধ ছিল।",
     date: "৫ জুলাই, ২০২২",
   },
@@ -72,236 +66,90 @@ const newsData = [
     desc: " মার্কিন সংবাদপত্র লস অ্যাঞ্জেলেস টাইমসের একটি প্রতিবেদনে বলা হয়, দৃষ্টিপ্রতিবন্ধী এক শিক্ষার্থী তোশিবার টি১০০০ টকিং ল্যাপটপের সুবিধা নিয়ে বিশ্ববিদ্যালয়ে তাঁর পড়াশোনা শেষ করেছেন এবং ডিগ্রি অর্জন করতে সক্ষম হয়েছেন। ইউনিভার্সিটি অব ক্যালিফোর্নিয়া লস অ্যাঞ্জেলেসে (ইউসিএলএ) কোর্স সম্পন্ন করতে এই ল্যাপটপ তাঁকে সহযোগিতা করে। ",
   },
 ];
-const CategoryListing = () => {
-  const dimension = useWindowDimensions();
-
+const Recommended = () => {
   return (
-    <>
-      <section className="pt-4 pb-5">
-        <div className="md:container">
-          <AdvertisementPageTop className="mt-5 px-5 lg:px-0" />
-          <div className="flex flex-col gap-2 lg:gap-2 mb-5 px-5 md:px-0">
-            <h3>বাংলাদেশ</h3>
-            <div className="flex">
-              <ul className="flex items-center gap-2">
-                <li>
-                  <Link href="#" className=" mb-0 text-[16px] leading-[21px]">
-                    রাজধানী
-                  </Link>
-                </li>
-                <li>
-                  <GoDotFill className=" text-[10px]" />
-                </li>
-                <li>
-                  <Link href="#" className=" mb-0 text-[16px] leading-[21px]">
-                    জেলা
-                  </Link>
-                </li>
-                <li>
-                  <GoDotFill className="text-[10px]" />
-                </li>
-                <li>
-                  <Link href="#" className=" mb-0 text-[16px] leading-[21px]">
-                    করোনাভাইরাস
-                  </Link>
-                </li>
-                <li>
-                  <GoDotFill className="text-[10px]" />
-                </li>
-                <li>
-                  <Link href="#" className=" mb-0 text-[16px] leading-[21px]">
-                    অপরাধ{" "}
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="flex">
-              <ul className="flex items-center gap-2">
-                <li>
-                  <Link href="#" className=" mb-0 text-[16px] leading-[21px]">
-                    হোম
-                  </Link>
-                </li>
-                <li>
-                  <RiArrowRightSLine className="text-xl" />
-                </li>
-                <li>
-                  <Link href="#" className=" mb-0 text-[16px] leading-[21px]">
-                    বাংলাদেশ{" "}
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
+    <section>
+      <div className="container">
+        <AdvertisementPageTop className="mt-5" />
+        <div className=" border-b border-b-[#dbdade] border-b-[1px] pb-8 mb-8">
+          <div className="grid grid-cols-[268px_1fr] items-center max-w-[910px] gap-[56px] ">
+            <h3 className="text-[#4B4B4B] font-semibold">Recommended News</h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_250px] lg:grid-cols-[1fr_297px] md:gap-[15px] lg:gap-[30px]">
-            <div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-3 lg:gap-4">
-                {newsData?.slice(4)?.map((item: any, i: any) => {
-                  const isFirst = i == 0;
-                  const isSecond = i == 1;
-                  return (
-                    <>
-                      <NewsCard
-                        key={i}
-                        data={item}
-                        classes={{
-                          root: isFirst
-                            ? " md:grid-cols-1 md:col-span-2 !relative mb-4 md:mb-0"
-                            : isSecond
-                            ? "grid-cols-[118px_1fr] md:grid-cols-1 self-start gap-3 px-5 md:px-0"
-                            : "px-5 md:px-0 grid-cols-[118px_1fr] md:grid-cols-1 self-start gap-3",
-                          ImageWrapper: isFirst
-                            ? "h-[260px] md:h-[360px] lg:h-[372px] !rounded-none md:!rounded-md"
-                            : "h-[70px] md:h-[220px] lg:h-[166px]",
-                          ImageStyle: isFirst
-                            ? "!rounded-none md:!rounded-md"
-                            : "",
-                          title: isFirst
-                            ? "text-base lg:text-[28px] lg:leading-9 text-white"
-                            : "text-sm leading-[18px] md:heading-three",
-                          desc: isFirst
-                            ? "!hidden"
-                            : isSecond
-                            ? "!hidden"
-                            : "!hidden md:flex !line-clamp-2",
-                          date: isFirst ? "!hidden" : "!text-xs md:text-[13px]",
-                          body: isFirst
-                            ? "!absolute bottom-[20px] left-[26px] z-10 text-white"
-                            : "",
-                          social: "!hidden",
-                          overlay: isFirst ? "!block" : "",
-                        }}
-                      />
-                      {dimension?.width < 768 && i != 0 && (
-                        <div className="w-full h-[1px] bg-[#DBDADE] my-[15px]"></div>
-                      )}
-
-                      {dimension?.width < 768 && i == 0 && (
-                        <div className="p-[26px] border flex flex-col gap-3  rounded-md mb-4 mx-5">
-                          <div className="flex items-center gap-3 mb-[26px]">
-                            <PiMapPin className="text-xl text-secondary" />
-                            <h3>আমার এলাকার খবর</h3>
-                          </div>
-
-                          <select
-                            name=""
-                            id=""
-                            className="w-full border p-1 px-3 rounded-md"
-                          >
-                            <option>বিভাগ</option>
-                            <option>বিভাগ</option>
-                            <option>বিভাগ</option>
-                          </select>
-                          <select
-                            name=""
-                            id=""
-                            className="w-full border p-1 px-3 rounded-md"
-                          >
-                            <option>জেলা</option>
-                            <option>জেলা</option>
-                            <option>জেলা</option>
-                          </select>
-                          <select
-                            name=""
-                            id=""
-                            className="w-full border p-1 px-3 rounded-md"
-                          >
-                            <option>উপজেলা</option>
-                            <option>উপজেলা</option>
-                            <option>উপজেলা</option>
-                          </select>
-                        </div>
-                      )}
-                    </>
-                  );
-                })}
-              </div>
-            </div>
-            <div className="hidden md:block">
-              <AdvertisementSideSm className="!hidden md:block" />
-
-              <div className="p-[26px] border flex flex-col gap-3 rounded-md">
-                <div className="flex items-center gap-3 mb-[26px]">
-                  <PiMapPin className="text-xl text-secondary" />
-                  <h3>আমার এলাকার খবর</h3>
-                </div>
-
-                <select
-                  name=""
-                  id=""
-                  className="w-full border p-1 px-3 rounded-md"
-                >
-                  <option>বিভাগ</option>
-                  <option>বিভাগ</option>
-                  <option>বিভাগ</option>
-                </select>
-                <select
-                  name=""
-                  id=""
-                  className="w-full border p-1 px-3 rounded-md"
-                >
-                  <option>জেলা</option>
-                  <option>জেলা</option>
-                  <option>জেলা</option>
-                </select>
-                <select
-                  name=""
-                  id=""
-                  className="w-full border p-1 px-3 rounded-md"
-                >
-                  <option>উপজেলা</option>
-                  <option>উপজেলা</option>
-                  <option>উপজেলা</option>
-                </select>
-              </div>
-
-              <AdvertisementSideSm className="mt-6" />
+            <div className="w-full relative">
+              <input
+                type="text"
+                placeholder="অনুসন্ধান করুন"
+                className="border border-[#dbdade] focus:outline-none px-4 py-[13px] w-full  rounded-md"
+              />
+              <IoIosSearch className="absolute top-[50%] translate-y-[-50%] right-[16px] text-2xl" />
             </div>
           </div>
         </div>
-      </section>
 
-      <section>
-        <div className="container">
-          <AdvertisementPageTop className="mb-5 !hidden md:block" />
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_250px] lg:grid-cols-[1fr_297px] xl:grid-cols-[160px_1fr_297px] gap-[30px] max-w-[1252px] mx-auto">
-            <div className="hidden xl:block">
-              <AdvertisementLeftSide />
+        <div className="grid grid-cols-1  lg:grid-cols-[160px_1fr_297px] gap-[30px] max-w-[1252px] mx-auto self-start">
+          <AdvertisementLeftSide className="sticky top-[100px] self-start " />
+
+          <div>
+            {newsData?.map((item: any, i: any) => {
+              return (
+                <div key={i}>
+                  <NewsCard
+                    key={i}
+                    data={item}
+                    classes={{
+                      root: "grid-cols-[118px_1fr] lg:grid-cols-[306px_1fr] lg:col-span-4 gap-3 lg:gap-[20px] ",
+                      ImageWrapper: "!h-[70px] lg:!h-[162px]",
+                      ImageStyle: "!h-full",
+                      title:
+                        "text-sm leading-[18px] md:heading-five !mb-1 lg:leading-[30px]",
+                      desc: "text-base !mb-[2px] hidden md:inline-flex md:!line-clamp-2",
+                      date: "!text-xs md:text-sm",
+                      social: "hidden lg:block",
+                      body: "!gap-0",
+                    }}
+                  />
+                  <div className="w-full h-[1px] bg-[#DBDADE] my-[15px]"></div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="sticky !top-[100px] self-start">
+            <AdvertisementSideSm />
+            <div className="flex items-center gap-1 mb-3">
+              <Image
+                title="Popular"
+                src="/images/icon-fire.png"
+                alt="Popular"
+                width={16}
+                height={16}
+              />
+              <h4 className="font-bold">{normalizedText("জনপ্রিয়")}</h4>
             </div>
-            <div>
-              {newsData?.map((item: any, i: any) => {
+            <div className="flex flex-col gap-5 lg:gap-3">
+              {newsData?.slice(0, 5)?.map((item: any, i: any) => {
                 return (
-                  <div key={i}>
-                    <NewsCard
-                      key={i}
-                      data={item}
-                      classes={{
-                        root: "grid-cols-[118px_1fr] md:grid-cols-[186px_1fr] lg:grid-cols-[306px_1fr] lg:col-span-4 gap-3 lg:gap-[20px]",
-                        ImageWrapper: "!h-[70px] md:!h-[110px] lg:!h-[162px]",
-                        ImageStyle: "!h-full",
-                        title:
-                          "text-sm leading-[18px] md:text-sm lg:text-xl !mb-1 ",
-                        desc: "text-base md:text-xs lg:text-base !mb-[2px] hidden md:inline-flex md:!line-clamp-2",
-                        date: "!text-xs md:text-sm",
-                        social: "hidden lg:block",
-                        body: "!gap-0",
-                      }}
-                    />
-                    <div className="w-full h-[1px] bg-[#DBDADE] my-[15px]"></div>
-                  </div>
+                  <NewsCard
+                    key={i}
+                    data={item}
+                    classes={{
+                      root: "grid-cols-[105px_1fr] gap-[10px]",
+                      ImageWrapper: "!h-[62px]",
+                      title: "heading-custom-one",
+                      body: "!gap-0",
+                      desc: "!hidden",
+                      cat: "!hidden",
+                    }}
+                  />
                 );
               })}
             </div>
-            <div>
-              <AdvertisementSideSm />
-              <Footer />
-            </div>
+            <Footer />
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
-export default CategoryListing;
+export default Recommended;

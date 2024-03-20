@@ -7,6 +7,8 @@ import { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import CustomPopover from "../../custom-popover";
 import Search from "../@component/@components/search";
+import { RxHamburgerMenu } from "react-icons/rx";
+
 import styles from "./header.module.scss";
 
 const Header = () => {
@@ -41,18 +43,25 @@ const Header = () => {
     <>
       <header className="sticky top-0 bg-white  z-[100]  shadow-sm ">
         <div className="container">
-          <div className="grid lg:grid-cols-[auto_1fr_auto] gap-5 md:gap-[50px] items-center py-4 lg:py-0">
-            <div className="flex justify-center">
-              <Link href="/" className="block w-max">
-                <Image
-                  src="/misc/logo-light.png"
-                  width={140}
-                  height={30}
-                  alt="24onBD"
-                  priority
-                />
-              </Link>
+          <div className="grid sm:grid-cols-[auto_1fr_auto] lg:grid-cols-[auto_1fr_auto] gap-5 md:gap-[50px] items-center py-4 lg:py-0">
+            <div className="flex justify-between items-center">
+              <div className="flex items-center gap-2">
+                <RxHamburgerMenu className="lg:hidden" />
+                <Link href="/" className="block w-max">
+                  <Image
+                    src="/misc/logo-light.png"
+                    width={140}
+                    height={30}
+                    alt="24onBD"
+                    priority
+                  />
+                </Link>
+              </div>
+              <div className="flex gap-3 items-center  sm:hidden">
+                <CustomPopover />
+              </div>
             </div>
+
             {navData && navData?.length > 0 && (
               <nav className="hidden lg:block font-medium">
                 <ul className="flex justify-center items-center">
@@ -187,12 +196,15 @@ const Header = () => {
                 </ul>
               </nav>
             )}
+
             <div className="flex gap-3 items-center">
-              <div className="flex  gap-5 w-full">
+              <div className="flex gap-5 justify-center w-full">
                 <Search />
-                <button className="btn btn-secondary">লগ ইন</button>
               </div>
-              {/* <CustomPopover /> */}
+              <div className="flex gap-3 items-center hidden sm:flex">
+                <button className="btn btn-secondary ">লগ ইন</button>
+                <CustomPopover />
+              </div>
             </div>
           </div>
         </div>

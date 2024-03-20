@@ -35,24 +35,27 @@ const JobList = () => {
                 </li>
               </ul>
             </div>
-            <div className="flex w-full ">
-              <div className="w-full relative">
+            <div className="flex w-full px-4">
+              <div className="w-full relative ">
                 <input
                   type="text"
                   name=""
                   id=""
-                  placeholder="Enter skills / designation / companies"
-                  className="w-full py-[10px] rounded-l-md focus:outline-none pl-[44px] pr-4"
+                  placeholder="Search Job Titles or Keywords"
+                  className="w-full py-[10px] rounded-l-md focus:outline-none pl-[44px] pr-4 placeholder:text-sm"
                 />
                 <CiSearch className="absolute top-[50%] -translate-y-[50%] left-5 text-lg" />
+                <button className="btn btn-secondary absolute top-[50%] -translate-y-[50%] right-2 text-lg !py-[2px] px-2 block md:hidden text-sm">
+                  Search
+                </button>
               </div>
-              <div className="w-[50%] relative">
+              <div className="w-[50%] relative !hidden md:!block">
                 <input
                   type="text"
                   name=""
                   id=""
                   placeholder="Enter location"
-                  className="w-full py-[10px] rounded-r-md focus:outline-none pl-[20px] pr-[26px]"
+                  className="w-full py-[10px] rounded-r-md focus:outline-none pl-[20px] pr-[26px] placeholder:text-sm"
                 />
                 <span className="absolute top-[50%] -translate-y-[50%] left-1 text-lg">
                   |
@@ -64,11 +67,11 @@ const JobList = () => {
             </div>
           </div>
         </div>
-        <div className="grid lg:grid-cols-3 gap-[20px] max-w-[1062px] mx-auto py-[30px] px-[40px] bg-white mt-[-80px] rounded-md shadow-[0_6px_10px_0px_rgba(57,57,57,0.1)]">
+        <div className="grid md:grid-cols-3 gap-[20px] max-w-[1062px] mx-5 lg:mx-auto py-[30px] px-5 lg:px-[40px] bg-white mt-[-80px] rounded-md shadow-[0_6px_10px_0px_rgba(57,57,57,0.1)]">
           <div>
             <ul className="flex flex-col gap-3">
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Accounting/Finance (350)
@@ -76,7 +79,7 @@ const JobList = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Bank/ Non-Bank Fin. Institution (52)
@@ -84,7 +87,7 @@ const JobList = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Supply Chain/ Procurement (92)
@@ -92,7 +95,7 @@ const JobList = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Accounting/Finance (350)
@@ -100,7 +103,7 @@ const JobList = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Bank/ Non-Bank Fin. Institution (52)
@@ -108,7 +111,7 @@ const JobList = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Supply Chain/ Procurement (92)
@@ -116,7 +119,7 @@ const JobList = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Accounting/Finance (350)
@@ -124,7 +127,7 @@ const JobList = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Bank/ Non-Bank Fin. Institution (52)
@@ -132,7 +135,7 @@ const JobList = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Supply Chain/ Procurement (92)
@@ -144,7 +147,7 @@ const JobList = () => {
           <div>
             <ul className="flex flex-col gap-3">
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Accounting/Finance (350)
@@ -152,7 +155,7 @@ const JobList = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Bank/ Non-Bank Fin. Institution (52)
@@ -160,7 +163,7 @@ const JobList = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Supply Chain/ Procurement (92)
@@ -168,7 +171,7 @@ const JobList = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Accounting/Finance (350)
@@ -176,7 +179,7 @@ const JobList = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Bank/ Non-Bank Fin. Institution (52)
@@ -184,7 +187,7 @@ const JobList = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Supply Chain/ Procurement (92)
@@ -192,7 +195,7 @@ const JobList = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Accounting/Finance (350)
@@ -200,7 +203,7 @@ const JobList = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Bank/ Non-Bank Fin. Institution (52)
@@ -208,7 +211,7 @@ const JobList = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Supply Chain/ Procurement (92)
@@ -220,7 +223,7 @@ const JobList = () => {
           <div>
             <ul className="flex flex-col gap-3">
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Accounting/Finance (350)
@@ -228,7 +231,7 @@ const JobList = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Bank/ Non-Bank Fin. Institution (52)
@@ -236,7 +239,7 @@ const JobList = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Supply Chain/ Procurement (92)
@@ -244,7 +247,7 @@ const JobList = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Accounting/Finance (350)
@@ -252,7 +255,7 @@ const JobList = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Bank/ Non-Bank Fin. Institution (52)
@@ -260,7 +263,7 @@ const JobList = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Supply Chain/ Procurement (92)
@@ -268,7 +271,7 @@ const JobList = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Accounting/Finance (350)
@@ -276,7 +279,7 @@ const JobList = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Bank/ Non-Bank Fin. Institution (52)
@@ -284,7 +287,7 @@ const JobList = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex gap-1">
+                <Link href="/jobs/search" className="flex gap-1">
                   <RiArrowRightSLine className="text-lg" />
                   <p className="text-[15px] font-normal leading-[18px] mt-[2px] mb-0">
                     Supply Chain/ Procurement (92)
@@ -305,7 +308,7 @@ const JobList = () => {
                   বিস্তারিত দেখতে চাকরির শিরোনামে ক্লিক করুন
                 </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 ">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-5">
                 {new Array(8).fill(1)?.map((_, i: any) => {
                   return (
                     <div key={i}>
